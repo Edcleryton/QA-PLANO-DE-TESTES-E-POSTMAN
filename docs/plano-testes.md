@@ -94,10 +94,18 @@ O plano de testes abrange a validação dos seguintes fluxos:
 ## 7. Cenários de Testes
 
 ### 7.1 Login com diferentes tipos de usuários
-| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
-|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| LG-001 | Login com credenciais válidas            | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso             |
-| LG-002 | Login com credenciais inválidas          | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro           |
+
+| ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso.                        |
+| LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
+| LG-003  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
+| LG-004  | Login com nome de usuário inválido          | 1. Acessar a página de login<br>2. Inserir um nome de usuário inexistente<br>3. Inserir uma senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando usuário inválido. |
+| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Deixar o campo de senha vazio<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
+| LG-006  | Login com senha contendo caracteres inválidos| 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Inserir uma senha com caracteres inválidos (ex.: `@@@@@@`)<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é inválida. |
+| LG-007  | Login com senha correta e nome de usuário em branco | 1. Acessar a página de login<br>2. Deixar o campo "Username" vazio<br>3. Inserir a senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que o campo "Username" é obrigatório. |
+| LG-008  | Login com credenciais corretas mas conta bloqueada | 1. Acessar a página de login<br>2. Inserir o nome de usuário de uma conta bloqueada<br>3. Inserir a senha correta<br>4. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
+
 
 ### 7.2 Ordenação e filtragem de produtos
 | ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
