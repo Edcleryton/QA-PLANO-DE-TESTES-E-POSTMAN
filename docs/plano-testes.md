@@ -93,46 +93,79 @@ O plano de testes abrange a validação dos seguintes fluxos:
 
 ## 7. Cenários de Testes
 
-### 7.1 Login com diferentes tipos de usuários
+### 7.1 UI Testing (Sauce Demo)
 
+#### 7.1.1 Login com diferentes tipos de usuários
+
+##### **Testes Funcionais**
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
 | LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso.                        |
 | LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
 | LG-003  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
 | LG-004  | Login com nome de usuário inválido          | 1. Acessar a página de login<br>2. Inserir um nome de usuário inexistente<br>3. Inserir uma senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando usuário inválido. |
-| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Deixar o campo de senha vazio<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
-| LG-006  | Login com senha contendo caracteres inválidos| 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Inserir uma senha com caracteres inválidos (ex.: `@@@@@@`)<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é inválida. |
-| LG-007  | Login com senha correta e nome de usuário em branco | 1. Acessar a página de login<br>2. Deixar o campo "Username" vazio<br>3. Inserir a senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que o campo "Username" é obrigatório. |
-| LG-008  | Login com credenciais corretas mas conta bloqueada | 1. Acessar a página de login<br>2. Inserir o nome de usuário de uma conta bloqueada<br>3. Inserir a senha correta<br>4. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
 
+##### **Testes Não Funcionais**
+| ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| LG-NF-001 | Testar login com teclado apenas           | 1. Usar a tecla "Tab" para navegar pelos campos<br>2. Inserir credenciais<br>3. Pressionar Enter no botão "Login" | Login realizado corretamente com apenas o teclado. |
+| LG-NF-002 | Testar login em diferentes navegadores    | 1. Acessar a página em Chrome, Firefox e Edge<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Login funcional em todos os navegadores testados. |
 
-### 7.2 Ordenação e filtragem de produtos
+---
+
+#### 7.1.2 Ordenação e filtragem de produtos
+
+##### **Testes Funcionais**
 | ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
 |--------|------------------------------------------|------------------------------------------|-----------------------------------------|
 | OR-001 | Ordenar produtos por preço               | 1. Acessar a página de produtos<br>2. Selecionar "Ordenar por preço" | Produtos ordenados corretamente        |
 | OR-002 | Filtrar produtos por categoria           | 1. Acessar a página de produtos<br>2. Selecionar uma categoria de filtro | Produtos filtrados corretamente        |
 
-### 7.3 Fluxo completo de compra (do carrinho até finalização)
+##### **Testes Não Funcionais**
+| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
+|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
+| OR-NF-001 | Testar ordenação em dispositivos móveis | 1. Acessar o site no modo "móvel" (DevTools)<br>2. Testar ordenação por preço | Ordenação funcional em dispositivos móveis. |
+
+---
+
+#### 7.1.3 Fluxo completo de compra (do carrinho até finalização)
+
+##### **Testes Funcionais**
 | ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
 |--------|------------------------------------------|------------------------------------------|-----------------------------------------|
 | FC-001 | Finalizar compra com sucesso             | 1. Acessar o carrinho<br>2. Clicar em "Checkout"<br>3. Preencher informações de pagamento<br>4. Confirmar | Compra finalizada com sucesso          |
 
-### 7.4 Remoção de itens do carrinho
-| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
-|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| RC-001 | Remover produto do carrinho              | 1. Acessar o carrinho<br>2. Selecionar um item<br>3. Clicar em "Remover" | Produto removido com sucesso           |
+---
 
-### 7.5 Navegação entre páginas
-| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
-|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| NP-001 | Navegação entre páginas principais       | 1. Acessar a página inicial<br>2. Clicar em qualquer link do menu de navegação | Página redirecionada corretamente      |
+### 7.2 API Testing (Restful-Booker)
 
-### 7.6 Logout
-| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
-|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| LO-001 | Logout com sucesso                       | 1. Estar logado<br>2. Clicar em "Logout" | Usuário deslogado com sucesso          |
+#### 7.2.1 Autenticação
 
+##### **Testes Funcionais**
+| ID      | Endpoint               | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|------------------------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| AU-001  | POST /auth             | Gerar token de autenticação                 | 1. Enviar requisição POST com credenciais válidas<br>2. Verificar o retorno da resposta | Token gerado com sucesso.                          |
+| AU-002  | POST /auth             | Tentar autenticação com credenciais inválidas | 1. Enviar requisição POST com credenciais inválidas<br>2. Verificar o retorno da resposta | Retorno de erro com código HTTP 401.               |
+
+##### **Testes Não Funcionais**
+| ID      | Endpoint               | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|------------------------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| AU-NF-001 | Testar autenticação em carga          | 1. Enviar múltiplas requisições simultâneas ao endpoint POST /auth<br>2. Medir tempo de resposta | Autenticação realizada com tempo de resposta aceitável. |
+
+---
+
+#### 7.2.2 Gestão de Reservas
+
+##### **Testes Funcionais**
+| ID      | Endpoint               | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|------------------------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| RB-001  | POST /booking          | Criar nova reserva                          | 1. Enviar requisição POST com dados válidos<br>2. Verificar se a reserva foi criada | Reserva criada com sucesso.                        |
+| RB-002  | GET /booking/:id       | Buscar reserva específica                   | 1. Enviar requisição GET com um ID válido<br>2. Verificar os detalhes retornados | Dados da reserva exibidos corretamente.            |
+
+##### **Testes Não Funcionais**
+| ID      | Endpoint               | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|------------------------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| RB-NF-001 | Testar carga no endpoint de criação de reservas | 1. Enviar múltiplas requisições POST /booking simultaneamente<br>2. Medir tempo de resposta | Reservas criadas com tempo de resposta aceitável. |
 ---
 
 ## 8. Resultados dos Testes
