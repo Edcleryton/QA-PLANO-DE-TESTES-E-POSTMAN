@@ -73,11 +73,12 @@ O plano de testes abrange a validação dos seguintes fluxos:
 
 | Atividade              | Duração | Data de Início | Data de Término |
 |------------------------|---------|----------------|-----------------|
-| Planejar Testes        | 3 dias  | 16/11/2024     | 18/11/2024      |
-| Projetar Casos de Teste| 4 dias  | 19/11/2024     | 22/11/2024      |
-| Implementar Testes     | 3 dias  | 23/11/2024     | 24/11/2024      |
-| Executar Testes        | 4 dias  | 26/11/2024     | 29/11/2024      |
-| Avaliar Resultados     | 1 dia   | 30/11/2024     | 30/11/2024      |
+| Planejar Testes        | 1 dia   | 19/11/2024     | 19/11/2024      |
+| Projetar Casos de Teste| 1 dia   | 20/11/2024     | 20/11/2024      |
+| Implementar Testes     | 2 dias  | 21/11/2024     | 22/11/2024      |
+| Executar Testes        | 2 dias  | 23/11/2024     | 24/11/2024      |
+| Avaliar Resultados     | 1 dia   | 25/11/2024     | 25/11/2024      |
+| Documentar Resultados  | 1 dia   | 26/11/2024     | 26/11/2024      |
 
 ---
 
