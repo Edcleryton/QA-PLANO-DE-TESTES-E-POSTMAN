@@ -108,37 +108,25 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 #### 7.1.1 Login com diferentes tipos de usuários
 
 ##### 7.1.1.1 Testes Funcionais
-
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
-| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas (usuário padrão)<br>3. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
-| LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
-| LG-003  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
-| LG-004  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir nome de usuário não cadastrado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
-| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Deixar o campo de senha vazio<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
-| LG-006  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir credenciais válidas de uma conta bloqueada<br>3. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
-| LG-007  | Login com `standard_user`                   | 1. Acessar a página de login<br>2. Inserir `standard_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Usuário logado com sucesso. |
-| LG-008  | Login com `locked_out_user`                 | 1. Acessar a página de login<br>2. Inserir `locked_out_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Mensagem indicando que o usuário está bloqueado. |
-| LG-009  | Login com `problem_user`                    | 1. Acessar a página de login<br>2. Inserir `problem_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Problemas específicos exibidos ao tentar navegar. |
-| LG-010  | Login com `performance_glitch_user`         | 1. Acessar a página de login<br>2. Inserir `performance_glitch_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Login realizado com lentidão, mas funcional. |
-| LG-011  | Login com `error_user`                     | 1. Acessar a página de login<br>2. Inserir `error_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Sistema exibe mensagem de erro inesperado. |
-| LG-012  | Login com `visual_user`                    | 1. Acessar a página de login<br>2. Inserir `visual_user` e senha `secret_sauce`<br>3. Clicar em "Login" | Login realizado com problemas de interface visível. |
+| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir nome de usuário válido<br>3. Inserir senha válida<br>4. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
+| LG-002  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir nome de usuário bloqueado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
+| LG-003  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir nome de usuário não cadastrado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
+| LG-004  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
+| LG-005  | Login com problemas funcionais              | 1. Acessar a página de login<br>2. Inserir nome de usuário com comportamento problemático<br>3. Inserir senha válida<br>4. Clicar em "Login" | Sistema apresenta erros visuais ou funcionais inesperados. |
+| LG-006  | Login com atraso no carregamento            | 1. Acessar a página de login<br>2. Inserir nome de usuário válido<br>3. Inserir senha válida<br>4. Clicar em "Login" | Login realizado, mas com atraso perceptível no carregamento da página inicial. |
+| LG-007  | Login com falhas de layout                  | 1. Acessar a página de login<br>2. Inserir nome de usuário com erros de interface<br>3. Inserir senha válida<br>4. Clicar em "Login" | Interface apresenta falhas visuais ou de layout após o login. |
 
 ---
 
-##### 7.1.1.2 Testes Não Funcionais
-
+#### **7.1.1.2 Testes Não Funcionais**
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
 | LG-NF-001 | Testar login em diferentes navegadores    | 1. Abrir o site no Chrome, Firefox e Edge<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Login funcional em todos os navegadores testados. |
 | LG-NF-002 | Testar tempo de resposta no login         | 1. Inserir credenciais válidas<br>2. Medir o tempo entre o clique em "Login" e o carregamento da página inicial | Tempo de resposta deve ser inferior a 2 segundos. |
 | LG-NF-003 | Testar login com múltiplas tentativas simultâneas | 1. Tentar logar simultaneamente em dois dispositivos diferentes<br>2. Verificar comportamento | Sistema deve bloquear uma das sessões ou sincronizar as atividades. |
 | LG-NF-004 | Testar login em dispositivos móveis       | 1. Acessar a página de login em um dispositivo móvel<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Login funcional em dispositivos móveis, com layout ajustado. |
-| LG-NF-005 | Verificar tempo de resposta para `standard_user` | 1. Realizar login com `standard_user` e medir o tempo de carregamento após "Login" | Tempo inferior a 2 segundos. |
-| LG-NF-006 | Verificar comportamento de `locked_out_user` | 1. Realizar login com `locked_out_user` e monitorar mensagens de bloqueio | Mensagem clara e direta informando sobre o bloqueio. |
-| LG-NF-007 | Testar login com problemas visuais em `visual_user` | 1. Realizar login com `visual_user` em dispositivos móveis e desktop | Problemas de interface devem ser consistentes em todas as plataformas. |
-
----
 
 ---
 
