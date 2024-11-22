@@ -108,8 +108,7 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 #### 7.1.1 Login com diferentes tipos de usuários
 
 ##### 7.1.1.1 Testes Funcionais
-| ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
-|---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
 | LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
