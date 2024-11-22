@@ -256,22 +256,52 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 
 | Cenário  | Resultado | Observações          |
 |----------|-----------|----------------------|
-| LG-001   | Aprovado  |                      |
-| LG-002   | Aprovado  | Mensagem de erro clara |
-| OR-001   | Aprovado  | Ordenação por preço correta |
-| FC-001   | Aprovado  | Fluxo de compra completo funcionando |
+| LG-001   | Aprovado  | Login com credenciais válidas funcionando como esperado. |
+| LG-002   | Aprovado  | Mensagem de erro clara para login inválido. |
+| LG-003   | Aprovado  | Mensagem de erro exibida corretamente para campos vazios. |
+| OR-001   | Aprovado  | Ordenação por preço (menor para maior) funcionando corretamente. |
+| OR-002   | Aprovado  | Ordenação por preço (maior para menor) funcional. |
+| OR-003   | Aprovado  | Filtro por categoria retorna resultados consistentes. |
+| FC-001   | Aprovado  | Produto adicionado ao carrinho com sucesso. |
+| FC-002   | Aprovado  | Fluxo de compra completo funcionando, sem erros. |
+| RC-001   | Aprovado  | Remoção de produto individual do carrinho realizada com sucesso. |
+| NP-001   | Aprovado  | Navegação entre páginas principais fluida e funcional. |
+| LO-001   | Aprovado  | Logout executado com sucesso, redirecionando corretamente para a página de login. |
 
 ---
 
 ## 9. Lista de Bugs Encontrados
 
-| ID do Bug | Descrição do Bug             | Classificação | Observações |
-|-----------|------------------------------|---------------|-------------|
+| ID do Bug | Descrição do Bug                          | Classificação | Observações                                               |
+|-----------|------------------------------------------|---------------|----------------------------------------------------------|
 | BUG-001   | Problema de navegação na página de checkout | Grave         | A navegação não funciona corretamente em dispositivos móveis. |
 | BUG-002   | Falha na exibição de imagens no carrinho de compras | Moderado      | Imagens de alguns produtos não estão sendo exibidas corretamente no carrinho. |
+| BUG-003   | Mensagem de erro genérica para login com senha inválida | Leve          | A mensagem não informa se o problema é no nome de usuário ou na senha. |
+| BUG-004   | Tempo elevado ao aplicar múltiplos filtros simultâneos | Moderado      | O tempo de resposta excede 5 segundos quando muitos filtros são aplicados. |
+| BUG-005   | Botão "Logout" às vezes não responde em dispositivos móveis | Grave         | O botão exige múltiplos cliques para funcionar. |
 
 ---
 
 ## 10. Sugestões de Melhorias
 
-- Melhorar o contraste de cores dos botões para
+1. **Interface do Usuário (UI):**
+   - **Contraste de cores:** Aumentar o contraste de cores dos botões para melhorar a acessibilidade e a visibilidade.
+   - **Redimensionamento de imagens:** Garantir que todas as imagens do carrinho sejam carregadas e ajustadas ao tamanho ideal.
+   - **Erros detalhados:** Exibir mensagens de erro mais informativas no login para ajudar os usuários a corrigirem os problemas rapidamente.
+
+2. **Experiência do Usuário (UX):**
+   - **Feedback visual:** Adicionar feedback visual (ex.: loaders ou spinners) em ações como filtros e checkout.
+   - **Melhoria no fluxo de logout:** Resolver o problema de resposta do botão "Logout" em dispositivos móveis.
+   - **Filtros otimizados:** Melhorar o desempenho ao aplicar múltiplos filtros simultaneamente.
+
+3. **Performance:**
+   - **Tempo de resposta:** Garantir que todas as ações, como navegação e aplicação de filtros, tenham tempo de resposta inferior a 2 segundos.
+   - **Teste de carga:** Simular cenários com alta carga de usuários para garantir estabilidade durante picos de acesso.
+
+4. **Acessibilidade:**
+   - **Teclado:** Permitir navegação completa utilizando apenas o teclado (Tab/Enter).
+   - **Textos alternativos:** Adicionar textos alternativos (alt) em imagens para suporte a leitores de tela.
+   - **Responsividade:** Garantir que todos os elementos sejam funcionais e visíveis em diferentes tamanhos de tela.
+
+5. **Automação:**
+   - Sugerir a automação dos testes críticos, como login, fluxo de compra e filtros, para aumentar a eficiência e a cobertura dos testes futuros.
