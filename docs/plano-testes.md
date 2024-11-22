@@ -110,13 +110,16 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 ##### 7.1.1.1 Testes Funcionais
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
-| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir nome de usuário válido<br>3. Inserir senha válida<br>4. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
-| LG-002  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir nome de usuário bloqueado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
-| LG-003  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir nome de usuário não cadastrado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
-| LG-004  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
-| LG-005  | Login com problemas funcionais              | 1. Acessar a página de login<br>2. Inserir nome de usuário com comportamento problemático<br>3. Inserir senha válida<br>4. Clicar em "Login" | Sistema apresenta erros visuais ou funcionais inesperados. |
-| LG-006  | Login com atraso no carregamento            | 1. Acessar a página de login<br>2. Inserir nome de usuário válido<br>3. Inserir senha válida<br>4. Clicar em "Login" | Login realizado, mas com atraso perceptível no carregamento da página inicial. |
-| LG-007  | Login com falhas de layout                  | 1. Acessar a página de login<br>2. Inserir nome de usuário com erros de interface<br>3. Inserir senha válida<br>4. Clicar em "Login" | Interface apresenta falhas visuais ou de layout após o login. |
+| ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
+|---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
+| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
+| LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
+| LG-003  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
+| LG-004  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir nome de usuário não cadastrado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
+| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Deixar o campo de senha vazio<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
+| LG-006  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir credenciais válidas de uma conta bloqueada<br>3. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
+| LG-007  | Login com falha de desempenho               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login"<br>4. Verificar lentidão no carregamento | Exibição de mensagem de sucesso, mas com carregamento acima do tempo esperado. |
+| LG-008  | Login com falhas de layout                  | 1. Acessar a página de login<br>2. Verificar a disposição dos campos e botões<br>3. Inserir credenciais válidas e realizar login | Interface deve estar corretamente alinhada e funcional em todos os dispositivos. |
 
 ---
 
