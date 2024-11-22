@@ -1,2 +1,2 @@
 # Teste-Pratico-QA
-Teste Prático QA - Sauce Demo
+Teste Prático - QA Testing BeTalent
