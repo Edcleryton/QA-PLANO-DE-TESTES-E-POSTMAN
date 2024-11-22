@@ -85,6 +85,8 @@ As evidências dos testes de API estão organizadas na pasta `Evidencias/api-tes
 ## Contribuição
 
 Este repositório foi estruturado para garantir clareza e organização. Caso tenha dúvidas ou sugestões, sinta-se à vontade para abrir uma **issue** ou entrar em contato.
+
+
 E-mail: edcleryton.gabriel@gmail.com | Linekin: https://www.linkedin.com/in/edcleryton-silva/ | GitHub: https://github.com/Edcleryton. 
 
 ---
