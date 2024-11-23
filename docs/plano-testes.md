@@ -63,9 +63,9 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 
 | Atividade              | Duração | Data de Início | Data de Término |
 |------------------------|---------|----------------|-----------------|
-| Planejar Testes        | 1 dia   | 19/11/2024     | 19/11/2024      |
-| Criar Casos de Teste   | 2 dias  | 20/11/2024     | 21/11/2024      |
-| Executar Testes (UI)   | 2 dias  | 22/11/2024     | 23/11/2024      |
+| Planejar Testes        | 1 dia   | 21/11/2024     | 21/11/2024      |
+| Criar Casos de Teste   | 2 dias  | 21/11/2024     | 23/11/2024      |
+| Executar Testes (UI)   | 2 dias  | 23/11/2024     | 24/11/2024      |
 | Executar Testes (API)  | 2 dias  | 24/11/2024     | 25/11/2024      |
 | Documentar Resultados  | 1 dia   | 26/11/2024     | 26/11/2024      |
 
