@@ -69,7 +69,11 @@ Validar os principais fluxos de funcionalidade e usabilidade da aplicação Sauc
 6. Logout.
 
 #### **Evidências**
-As evidências dos testes manuais estão organizadas na pasta `Evidencias/ui-testing/`.
+As evidências relacionadas aos testes estão organizadas em categorias e disponíveis no Terabox. Acesse-as através dos links abaixo:
+
+- 🔗 [Evidências de Bugs](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)  
+- 🔗 [Evidências de Testes Funcionais](https://terabox.com/s/11J0NPRZJ7hfTIFhCHSMfJA)  
+- 🔗 [Evidências de Testes Não Funcionais](https://terabox.com/s/16JvzuwtzvLmdz5cCKArzOw)
 
 ---
 
