@@ -191,7 +191,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | FC-NF-001  | Teste de Acessibilidade no Checkout           |  1. Navegar pelo checkout usando apenas o teclado (Tab e Enter).<br>2. Confirmar a funcionalidade de todos os campos e botões. | Todos os elementos devem ser navegáveis, receber foco visível, e realizar as ações esperadas. |
 | FC-NF-002  | Testar fluxo de compra em dispositivos móveis  | 1. Realizar uma compra completa no modo "móvel" (DevTools)<br>2. Conferir layout e funcionalidade              | Fluxo funcional e layout responsivo.          |
-| FC-NF-003  | Verificar comportamento com alta carga de usuários | 1. Simular múltiplos acessos simultâneos ao checkout<br>2. Realizar compras paralelas                          | Sistema mantém desempenho estável sem falhas. |
+
 
 ---
 
@@ -202,14 +202,14 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 |--------|----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | RC-001 | Remover produto individual do carrinho       | 1. Acessar o carrinho com produtos adicionados<br>2. Clicar no botão "Remover" ao lado de um produto            | Produto removido com sucesso.                 |
 | RC-002 | Remover todos os produtos do carrinho        | 1. Acessar o carrinho com vários produtos<br>2. Remover os itens um por um até o carrinho ficar vazio           | Carrinho vazio exibido corretamente.          |
-| RC-003 | Exibir mensagem ao tentar remover produto inexistente | 1. Acessar o carrinho<br>2. Tentar remover um produto que já foi removido anteriormente                        | Mensagem de erro ou aviso indicando item inexistente. |
+
 
 
 ##### 7.1.4.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | RC-NF-001  | Verificar tempo de resposta ao remover produtos | 1. Remover produtos do carrinho repetidamente<br>2. Medir o tempo de resposta após cada ação                   | Tempo de resposta inferior a 1 segundo.       |
-| RC-NF-002  | Verificar comportamento ao remover produtos com baixa conectividade | 1. Simular ambiente de internet lenta ou instável<br>2. Remover produto do carrinho                           | Produto removido com sucesso, com notificações de status exibidas. |
+| RC-NF-002  | Verificar acessibilidade na remoção de produtos do carrinho | 1. Navegar pelo carrinho usando apenas o teclado (Tab e Enter).<br>2. Selecionar o botão "Remover" de um produto.    | Produto removido com sucesso, com foco visível no elemento selecionado. |
 
 ---
 
