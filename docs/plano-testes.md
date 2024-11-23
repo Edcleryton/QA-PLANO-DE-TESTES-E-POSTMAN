@@ -304,3 +304,6 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | FB-NF-002  | Testar comportamento ao aplicar filtros inválidos | 1. Realizar requisições GET com parâmetros inválidos (ex.: `checkin=invalid-date`)<br>2. Verificar respostas | Resposta com código 400 e mensagem de erro clara.   |
 | FB-NF-003  | Testar busca em grandes volumes de dados        | 1. Aplicar filtros em uma base de dados com mais de 10.000 registros<br>2. Monitorar o desempenho      | Resultados retornados sem impacto significativo no desempenho. |
 
+---
+
+> **Nota:** Consulte o [Relatório de Resultados](./relatorio-resultados.md) para informações sobre bugs encontrados e sugestões de melhorias.
