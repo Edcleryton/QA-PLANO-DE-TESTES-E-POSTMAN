@@ -56,10 +56,8 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 
 - **UI Testing:**
   - Google Chrome
-  - Firefox
   - Lighthouse
   - DevTools
-  - Selenium
 
 - **API Testing:**
   - Postman
@@ -68,7 +66,6 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 
 - **Controle de Qualidade:**
   - GitHub (armazenamento de evidências)
-  - QASE (gerenciamento de casos de teste)
 
 ---
 
