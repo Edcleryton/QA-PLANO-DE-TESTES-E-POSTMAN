@@ -1,1 +1,0 @@
-# Bugs Funcionais - UI-Testing
