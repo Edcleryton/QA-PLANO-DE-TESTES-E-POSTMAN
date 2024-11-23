@@ -44,7 +44,8 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 ## 2. Escopo
 
 - **UI Testing (Sauce Demo):**
-  - Validar os fluxos principais da aplicação, como login, navegação, compra e logout.
+  - Validar os fluxos principais da aplicação: Login com diferentes tipos de usuários disponíveis 
+Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até finalização), Remoção de itens do carrinho, Navegação entre páginas, Logout.
   - Verificar responsividade e acessibilidade.
 
 - **API Testing (Restful-Booker):**
@@ -65,7 +66,9 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
   - JMeter (para cenários de carga)
 
 - **Controle de Qualidade:**
-  - GitHub (armazenamento de evidências)
+  - GitHub (armazenamento da estutura do projeto)
+  - terabox (armazenamento de evidências)
+  - Google Drive (armazenamento de evidências)
 
 ---
 
