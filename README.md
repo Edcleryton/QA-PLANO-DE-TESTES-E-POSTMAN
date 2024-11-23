@@ -126,7 +126,7 @@ As evidências dos testes de API estão organizadas na pasta `Evidencias/api-tes
 
 ---
 
-**Contato:**  
+**Contato**  
 E-mail: [edcleryton.gabriel@gmail.com](mailto:edcleryton.gabriel@gmail.com)  
 LinkedIn: [Edcleryton Silva](https://www.linkedin.com/in/edcleryton-silva/)  
 GitHub: [Edcleryton](https://github.com/Edcleryton)  
