@@ -1,1 +1,0 @@
-# Bugs Funcionais - API Testing
