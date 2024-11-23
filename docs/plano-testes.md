@@ -171,7 +171,6 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 |--------|------------------------------------------|------------------------------------------|-----------------------------------------|
 | OR-NF-001 | Testar ordenação em dispositivos móveis | 1. Acessar o site no modo "móvel" (DevTools)<br>2. Testar ordenação pelos filtros disponíveis | Ordenação funcional em dispositivos móveis. |
 | OR-NF-002 | Verificar tempo de resposta ao aplicar filtros | 1. Selecionar um filtro (ex.: "A-Z") em categorias com muitos produtos<br>2. Medir o tempo para exibição dos resultados | Tempo de carregamento inferior a 2 segundos. |
-| OR-NF-003 | Verificar comportamento com categorias vazias | 1. Aplicar filtro em uma categoria sem produtos<br>2. Conferir mensagem exibida | Mensagem clara informando que não há produtos disponíveis. |
 
 
 ---
