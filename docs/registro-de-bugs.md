@@ -18,20 +18,23 @@
 | BUG-0006    | Ausência de opções de pagamento no checkout        | **Dado:** que o usuário acessa a página de checkout.<br>**Quando:** revisa os itens e tenta concluir a compra.<br>**Então:** não há opções ou campos disponíveis para selecionar o método de pagamento. | Implementar opções de pagamento (cartão, boleto, etc.) como parte obrigatória do checkout. | 1          | Windows        | Chrome/Edge       | Crítica         | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | FC-003                        |
 | BUG-0007    | Falha de acessibilidade no checkout                | **Dado:** que o usuário tenta usar o checkout apenas com o teclado.<br>**Quando:** navega usando Tab e Enter.<br>**Então:** não há foco visível nos botões e campos, e ações inesperadas são realizadas. | Garantir que todos os elementos sejam acessíveis via teclado, com foco visível.           | 1          | Windows        | Chrome/Edge       | Moderada        | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | FC-NF-004                      |
 | BUG-0008    | Finalização de compra com carrinho vazio           | **Dado:** que o usuário acessa o checkout sem itens no carrinho.<br>**Quando:** preenche os dados no checkout e tenta finalizar a compra.<br>**Então:** a finalização é feita com sucesso, mesmo sem produtos. | Bloquear o processo de checkout quando o carrinho estiver vazio.                          | 1          | Windows        | Chrome/Edge       | Crítica         | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | RC-002                        |
+| BUG-0009    | Página "About" redireciona para conteúdo externo desconhecido | **Dado:** que o usuário acessa o menu "About".<br>**Quando:** clica na opção.<br>**Então:** é redirecionado para a página da Sauce Labs sem contexto claro ou documentação. | Documentar o redirecionamento da opção "About" ou corrigir o comportamento.                | 1          | Windows        | Chrome/Edge       | Moderada        | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | NP-005                        |
 
 ---
 
 ## Resumo Geral
 
-- **Total de Bugs Registrados:** 8
+- **Total de Bugs Registrados:** 9
 - **Bugs Críticos/Bloqueadores:** 3
-- **Bugs Moderados:** 3
+- **Bugs Moderados:** 5
 - **Bugs Leves:** 0
 - **Status Atual dos Bugs:**
-  - **Abertos:** 8
+  - **Abertos:** 9
   - **Fechados:** 0
 
 ### Notas Adicionais
 - **Priorização:** Os bugs de maior criticidade devem ser tratados antes do lançamento.
 - **Acompanhamento:** As evidências e casos relacionados estão documentados para facilitar a resolução.
 - **Próximos Passos:** Executar retestes após a correção dos bugs.
+
+> **Nota:** Consulte o [Plano de Testes](./plano-testes.md) e o [Relatório de Resultados](./relatorio-resultados.md) para mais detalhes.
