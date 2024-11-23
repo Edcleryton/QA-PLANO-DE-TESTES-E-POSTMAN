@@ -187,6 +187,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | FC-005 | Verificar comportamento com produtos fora de estoque | 1. Adicionar produto ao carrinho<br>2. Realizar checkout<br>3. Produto fica fora de estoque no processo | Mensagem informando indisponibilidade do produto. |
 | **FC-006** | Validar a obrigatoriedade de dados completos no checkout | 1. Acesse o site e adicione produtos ao carrinho.<br>2. Clique no botão "Checkout".<br>3. Preencha apenas "Nome", "Sobrenome" e "Código Postal".<br>4. Clique em "Continuar".<br>5. Tente finalizar a compra. | O sistema deve exibir mensagens de erro para os campos obrigatórios não preenchidos e bloquear a finalização. |
 
+
 ##### 7.1.3.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
@@ -204,6 +205,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | RC-001 | Remover produto individual do carrinho       | 1. Acessar o carrinho com produtos adicionados<br>2. Clicar no botão "Remover" ao lado de um produto            | Produto removido com sucesso.                 |
 | RC-002 | Remover todos os produtos do carrinho        | 1. Acessar o carrinho com vários produtos<br>2. Remover os itens um por um até o carrinho ficar vazio           | Carrinho vazio exibido corretamente.          |
 | RC-003 | Exibir mensagem ao tentar remover produto inexistente | 1. Acessar o carrinho<br>2. Tentar remover um produto que já foi removido anteriormente                        | Mensagem de erro ou aviso indicando item inexistente. |
+
 
 ##### 7.1.4.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
