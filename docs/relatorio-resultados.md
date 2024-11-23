@@ -30,11 +30,11 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 | ID       | Descrição                                              | Gravidade | Evidência                   | Status  |
 |----------|--------------------------------------------------------|-----------|-----------------------------|---------|
-| BUG-001  | Tempo de resposta no login acima do esperado (3.54s)   | Alta      | [Evidência](#)              | Aberto  |
-| BUG-002  | Mensagem de erro genérica ao falhar login              | Moderada  | [Evidência](#)              | Aberto  |
-| BUG-003  | Não sincronização de carrinho entre abas simultâneas   | Moderada  | [Evidência](#)              | Aberto  |
-| BUG-004  | Login não funcional em dispositivos móveis             | Alta      | [Evidência](#)              | Aberto  |
-| BUG-005  | Navegação para páginas inexistentes sem mensagem clara | Baixa     | [Evidência](#)              | Aberto  |
+| BUG-001  | Tempo de resposta no login acima do esperado (3.54s)   | Alta      | [Evidência](#)https://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw              | Aberto  |
+| BUG-002  | Mensagem de erro genérica ao falhar login              | Moderada  | [Evidência](#)https://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw              | Aberto  |
+| BUG-003  | Não sincronização de carrinho entre abas simultâneas   | Moderada  | [Evidência](#)https://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw              | Aberto  |
+| BUG-004  | Login não funcional em dispositivos móveis             | Alta      | [Evidênciahttps://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw](#)https://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw              | Aberto  |
+| BUG-005  | Navegação para páginas inexistentes sem mensagem clara | Baixa     | [Evidência](#)https://terabox.com/s/1uzW-zoU1QIQk6xu0yUvAyw             | Aberto  |
 
 ---
 
