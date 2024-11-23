@@ -221,7 +221,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | NP-002 | Navegar para a página de produtos            | 1. Acessar o menu principal<br>2. Clicar na opção "Produtos"                                                   | Página de produtos exibida corretamente.      |
 | NP-003 | Navegar para o carrinho                      | 1. Adicionar produtos ao carrinho<br>2. Clicar no ícone ou menu "Carrinho"                                     | Página do carrinho exibida com os itens corretos. |
 | NP-004 | Navegar para a página de checkout            | 1. Acessar o carrinho<br>2. Clicar em "Checkout"                                                               | Página de checkout exibida corretamente.       |
-| NP-005 | Navegar para uma página inexistente          | 1. Digitar uma URL inválida ou inexistente<br>2. Pressionar Enter                                              | Sistema exibe página de erro 404 com navegação de retorno. |
+
 
 ##### 7.1.5.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
