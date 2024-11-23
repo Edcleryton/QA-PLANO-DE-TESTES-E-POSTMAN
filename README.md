@@ -114,7 +114,7 @@ As evidências dos testes de API estão organizadas na pasta `Evidencias/api-tes
 ## 📌 Ferramentas Utilizadas 💻
 
 - **UI Testing**:
-  - Navegadores: Google Chrome, Firefox.
+  - Navegadores: Google Chrome, Edge.
   - Lighthouse: Para verificar acessibilidade e desempenho.
   - DevTools: Para inspeção e validação de tempos de resposta.
 
