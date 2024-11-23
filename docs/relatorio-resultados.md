@@ -35,8 +35,10 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 |------------|--------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|------------|
 | BUG-0001   | Tempo de resposta no login acima do esperado (3.54s) | Alta          | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
 | BUG-0002   | Mensagem de erro genérica ao falhar login  | Moderada      | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0003   | Não sincronização de carrinho entre abas simultâneas | Moderada      | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0004   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
+| BUG-0003   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
+| BUG-0004   | Login com falha de layout                 | Moderada      | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
+| BUG-0005   | Checkout incompleto - Falta de validação obrigatória | Crítica        | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
+| BUG-0006   | Ausência de opções de pagamento no checkout | Crítica        | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
 
 ---
 
@@ -49,6 +51,10 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 ### **Performance:**
 - Otimizar o tempo de resposta do endpoint de login para ficar abaixo de 2 segundos.
 - Melhorar sincronização de dados entre múltiplas abas.
+
+### **Checkout:**
+- Implementar validação obrigatória para todos os campos de pagamento no checkout.
+- Adicionar opções de pagamento (cartão de crédito, boleto, etc.).
 
 ### **Acessibilidade:**
 - Garantir que o site seja compatível com leitores de tela e navegadores por teclado.
@@ -63,6 +69,7 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 | Frustração do usuário devido a mensagens de erro genéricas | Alta              | Alta             | Melhorar mensagens de erro.             |
 | Falhas em picos de acesso devido ao desempenho do login   | Média             | Alta             | Otimizar endpoints críticos.            |
 | Dificuldade de acesso em dispositivos móveis              | Alta              | Alta             | Ajustar layout e compatibilidade móvel. |
+| Finalização de compra sem validação obrigatória           | Alta              | Alta             | Implementar validação de todos os campos no checkout. |
 
 ---
 
@@ -74,7 +81,7 @@ Os testes realizados destacaram áreas críticas que precisam de melhorias para 
 ### **Próximos Passos**
 1. **Correção dos Bugs Identificados:** Resolver todos os bugs priorizando os de maior criticidade.  
 2. **Execução de Retestes:** Reexecutar os testes para garantir a eficácia das correções.  
-3. **Implementação de Melhorias:** Foco na otimização de UI, performance e acessibilidade.  
+3. **Implementação de Melhorias:** Foco na otimização de UI, performance, checkout e acessibilidade.  
 4. **Expansão dos Testes:** Ampliar os testes para novos fluxos e cenários críticos.  
 
 ---
