@@ -189,7 +189,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 ##### 7.1.3.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| FC-NF-001  | Teste de Acessibilidade no Checkout           | 1. Acessar o site e adicionar produtos ao carrinho.<br>2. Clicar em "Checkout".<br>3. Navegar pelo checkout usando apenas teclado (Tab e Enter).<br>4. Ativar um leitor de tela para verificar acessibilidade das informações. | Processo de checkout navegável via teclado e acessível com leitor de tela ativo. |
+| FC-NF-001  | Teste de Acessibilidade no Checkout           |  1. Navegar pelo checkout usando apenas o teclado (Tab e Enter).<br>2. Confirmar a funcionalidade de todos os campos e botões. | Todos os elementos devem ser navegáveis, receber foco visível, e realizar as ações esperadas. |
 | FC-NF-002  | Testar fluxo de compra em dispositivos móveis  | 1. Realizar uma compra completa no modo "móvel" (DevTools)<br>2. Conferir layout e funcionalidade              | Fluxo funcional e layout responsivo.          |
 | FC-NF-003  | Verificar comportamento com alta carga de usuários | 1. Simular múltiplos acessos simultâneos ao checkout<br>2. Realizar compras paralelas                          | Sistema mantém desempenho estável sem falhas. |
 
