@@ -17,15 +17,14 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 ## 2. Resumo dos Resultados
 
-- **Total de Casos de Teste Executados:** 59  
-  - **Casos Funcionais:** 40  
-  - **Casos Não Funcionais:** 19  
-- **Casos de Teste Aprovados:** 50  
-- **Casos de Teste Reprovados:** 9  
+- **Total de Casos de Teste Executados:** 55  
+  - **Casos Funcionais:** 38  
+  - **Casos Não Funcionais:** 17  
+- **Casos de Teste Aprovados:** 43  
+- **Casos de Teste Reprovados:** 12  
 - **Cobertura de Testes:** 100%  
 - **Evidências dos Testes:**  
-  - **Funcionais:** [Link para Evidências](https://terabox.com/s/11J0NPRZJ7hfTIFhCHSMfJA)  
-  - **Não Funcionais:** [Link para Evidências](https://terabox.com/s/16JvzuwtzvLmdz5cCKArzOw)  
+  - **Funcionais e Não Funcionais:** [Link para Evidências](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)
 
 ---
 
@@ -33,12 +32,15 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 | **ID**     | **Título**                                  | **Gravidade** | **Evidência**                                                                                       | **Status** |
 |------------|--------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|------------|
-| BUG-0001   | Tempo de resposta no login acima do esperado (3.54s) | Alta          | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0002   | Mensagem de erro genérica ao falhar login  | Moderada      | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0003   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0004   | Login com falha de layout                 | Moderada      | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0005   | Checkout incompleto - Falta de validação obrigatória | Crítica        | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
-| BUG-0006   | Ausência de opções de pagamento no checkout | Crítica        | [Evidência](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)                                          | Aberto     |
+| BUG-0001   | Tempo de resposta no login acima do esperado (3.54s) | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0002   | Mensagem de erro genérica ao falhar login  | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0003   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0004   | Login com falha de layout                 | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0005   | Checkout incompleto - Falta de validação obrigatória | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0006   | Ausência de opções de pagamento no checkout | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0007   | Redirecionamento externo não esperado na página "About" | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0008   | Finalização de compra sem produtos no carrinho | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0009   | Acessibilidade inadequada na remoção de itens do carrinho | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
 
 ---
 
@@ -59,6 +61,7 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 ### **Acessibilidade:**
 - Garantir que o site seja compatível com leitores de tela e navegadores por teclado.
 - Implementar ajustes para responsividade em dispositivos móveis.
+- Garantir foco visível e claro para campos de entrada e botões em todas as páginas.
 
 ---
 
@@ -70,6 +73,7 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 | Falhas em picos de acesso devido ao desempenho do login   | Média             | Alta             | Otimizar endpoints críticos.            |
 | Dificuldade de acesso em dispositivos móveis              | Alta              | Alta             | Ajustar layout e compatibilidade móvel. |
 | Finalização de compra sem validação obrigatória           | Alta              | Alta             | Implementar validação de todos os campos no checkout. |
+| Navegação ambígua para páginas externas                   | Média             | Moderada         | Revisar redirecionamentos no menu e páginas. |
 
 ---
 
@@ -86,7 +90,5 @@ Os testes realizados destacaram áreas críticas que precisam de melhorias para 
 
 ---
 
-**Links Relacionados:**  
-- **Bugs:** [Registro de Bugs](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)  
-- **Testes Funcionais:** [Evidências Funcionais](https://terabox.com/s/11J0NPRZJ7hfTIFhCHSMfJA)  
-- **Testes Não Funcionais:** [Evidências Não Funcionais](https://terabox.com/s/16JvzuwtzvLmdz5cCKArzOw)  
+> **Nota:** Consulte o [Registro de Bugs](./registro-de-bugs.md) para mais detalhes sobre os bugs identificados.  
+> **Nota:** Consulte o [Plano de Testes](./plano-de-testes.md) para informações detalhadas sobre os casos de teste.
