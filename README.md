@@ -1,94 +1,139 @@
-# Teste Prático QA Testing BeTalent
+# Teste Prático QA Testing BeTalent 🛠️
 
 Este repositório contém a documentação e as evidências dos testes realizados para o desafio QA Testing BeTalent. Os testes estão divididos em dois tipos principais: **UI Testing** e **API Testing**.
 
 ---
 
-## Estrutura do Repositório
-
-- **`README.md`**: Este arquivo, contendo as instruções e informações gerais.
-- **`docs/`**:
-  - `plano-testes.md`: Documento com os planos de testes detalhados.
-- **`Evidencias/`**: Contém as capturas de tela e arquivos de evidências organizados:
-  - **`ui-testing/`**:
-    - `login/`: Evidências de login.
-    - `ordenacao/`: Evidências de ordenação e filtros.
-    - `fluxo_compra/`: Evidências do fluxo completo de compra.
-    - `logout/`: Evidências de logout.
-  - **`api-testing/`**:
-    - `autenticacao/`: Evidências de autenticação.
-    - `reservas/`: Evidências de gestão de reservas.
+## 📌 Status do Projeto
+✅ Em andamento
 
 ---
 
-## Testes Realizados
+## 📌 Índice
+1. [Descrição do Projeto](#descrição-do-projeto)  
+2. [Estrutura do Repositório](#estrutura-do-repositório)  
+3. [Testes Realizados](#testes-realizados)  
+   - [UI Testing (Sauce Demo)](#ui-testing-sauce-demo)  
+   - [API Testing (Restful-Booker)](#api-testing-restful-booker)  
+4. [Como Reproduzir os Testes](#como-reproduzir-os-testes)  
+5. [Ferramentas Utilizadas](#ferramentas-utilizadas)  
+6. [Colaboradores e Mentores](#colaboradores-e-mentores)  
 
-### 1. UI Testing (Sauce Demo)
+---
+
+## 📌 Descrição do Projeto
+
+O objetivo deste projeto é validar as funcionalidades da aplicação **Sauce Demo** e da API **Restful-Booker**. Ele inclui testes funcionais e não funcionais, priorizando a experiência do usuário, desempenho e acessibilidade.  
+
+Os testes foram planejados com base em critérios de aceitação funcionais e não funcionais, garantindo qualidade nas entregas.
+
+**Objetivos principais:**
+- Validar fluxos de login, navegação e ações principais da interface gráfica (UI Testing).
+- Testar endpoints para autenticação, gestão de reservas e buscas (API Testing).
+
+---
+
+## 📌 Estrutura do Repositório
+
+A organização do repositório é a seguinte:
+
+- **`README.md`**: Este arquivo, contendo informações gerais do projeto.
+- **`docs/`**:  
+  - **`plano-testes.md`**: Documento com os planos de testes detalhados.  
+  - **`resultados-evidencias.md`**: Documento complementar com os resultados dos testes, bugs encontrados e sugestões de melhorias.
+- **`Evidencias/`**: Pasta contendo evidências organizadas:
+  - **`ui-testing/`**:
+    - **`login/`**: Evidências relacionadas aos testes de login.
+    - **`ordenacao/`**: Evidências de ordenação e filtros.
+    - **`fluxo_compra/`**: Evidências do fluxo completo de compra.
+    - **`logout/`**: Evidências relacionadas ao logout.
+  - **`api-testing/`**:
+    - **`autenticacao/`**: Evidências de autenticação.
+    - **`reservas/`**: Evidências de gestão de reservas.
+
+---
+
+## 📌 Testes Realizados
+
+### **1. UI Testing (Sauce Demo)**
 
 #### **Objetivo**
-Validar os principais fluxos de funcionalidade e usabilidade da plataforma Sauce Demo para garantir que esteja pronta para lançamento em produção.
+Validar os principais fluxos de funcionalidade e usabilidade da aplicação Sauce Demo para garantir a experiência do usuário.
 
 #### **Cenários Testados**
-1. **Login com diferentes tipos de usuários disponíveis**
-2. **Ordenação e filtragem de produtos**
-3. **Fluxo completo de compra (do carrinho até finalização)**
-4. **Remoção de itens do carrinho**
-5. **Navegação entre páginas**
-6. **Logout**
+1. Login com diferentes tipos de usuários disponíveis.
+2. Ordenação e filtragem de produtos.
+3. Fluxo completo de compra (do carrinho até finalização).
+4. Remoção de itens do carrinho.
+5. Navegação entre páginas.
+6. Logout.
 
 #### **Evidências**
-As evidências dos testes manuais estão organizadas na pasta `Evidencias/ui-testing/`, separadas por cenário.
-
-#### **Como Reproduzir**
-1. Acesse a aplicação Sauce Demo: [https://www.saucedemo.com](https://www.saucedemo.com).
-2. Consulte o documento `docs/plano-testes.md` para os passos detalhados de cada cenário de teste.
-3. Verifique as evidências capturadas na pasta correspondente.
+As evidências dos testes manuais estão organizadas na pasta `Evidencias/ui-testing/`.
 
 ---
 
-### 2. API Testing (Restful-Booker)
+### **2. API Testing (Restful-Booker)**
 
 #### **Objetivo**
-Garantir que os principais endpoints da API Restful-Booker estejam funcionando corretamente antes da integração com o front-end.
+Garantir que os principais endpoints da API Restful-Booker estejam funcionando corretamente.
 
 #### **Cenários Testados**
-1. **Autenticação**
+1. **Autenticação**:
    - Gerar token de autenticação.
    - Testar autenticação com credenciais inválidas.
-2. **Gestão de Reservas**
+2. **Gestão de Reservas**:
    - Criar, buscar, atualizar, listar e deletar reservas.
-3. **Filtros e Buscas**
-   - Buscar reservas por nome, data de check-in e data de check-out.
+3. **Filtros e Buscas**:
+   - Buscar reservas por nome, data de check-in e check-out.
 
 #### **Evidências**
-As evidências dos testes de API estão organizadas na pasta `Evidencias/api-testing/`, separadas por cenário.
+As evidências dos testes de API estão organizadas na pasta `Evidencias/api-testing/`.
 
-#### **Como Reproduzir**
-1. Importe a collection do Postman disponível na pasta `collections/` (se aplicável).
+---
+
+## 📌 Como Reproduzir os Testes
+
+### **UI Testing**
+1. Acesse a aplicação Sauce Demo: [https://www.saucedemo.com](https://www.saucedemo.com).
+2. Consulte o documento `docs/plano-testes.md` para os passos detalhados de cada cenário.
+3. Confira as evidências na pasta `Evidencias/ui-testing/`.
+
+### **API Testing**
+1. Importe a collection do Postman disponível na pasta `collections/`.
 2. Configure as variáveis de ambiente incluídas na collection.
 3. Consulte o documento `docs/plano-testes.md` para os passos detalhados de cada cenário.
-4. Verifique as evidências capturadas na pasta correspondente.
+4. Confira as evidências na pasta `Evidencias/api-testing/`.
 
 ---
 
-## Observações Gerais
+## 📌 Ferramentas Utilizadas 💻
 
-- **Ferramentas Utilizadas**:
-  - **UI Testing**: Testes manuais utilizando navegadores (Google Chrome, Firefox).
-  - **API Testing**: Postman para criação e execução de testes em endpoints da API.
-- **Organização**:
-  - Todas as evidências estão organizadas em pastas para facilitar a análise.
-  - O plano de testes está documentado em formato Markdown no arquivo `docs/plano-testes.md`.
+- **UI Testing**:
+  - Navegadores: Google Chrome, Firefox.
+  - Lighthouse: Para verificar acessibilidade e desempenho.
+  - DevTools: Para inspeção e validação de tempos de resposta.
 
----
-
-## Contribuição
-
-Este repositório foi estruturado para garantir clareza e organização. Caso tenha dúvidas ou sugestões, sinta-se à vontade para abrir uma **issue** ou entrar em contato.
-
-
-E-mail: edcleryton.gabriel@gmail.com | Linekin: https://www.linkedin.com/in/edcleryton-silva/ | GitHub: https://github.com/Edcleryton. 
+- **API Testing**:
+  - **Postman**: Criação e execução de requisições de teste.
 
 ---
 
-**Boa sorte e sucesso nos testes!**
+## 📌 Colaboradores e Mentores ✨
+
+### **Colaboradores**
+- **Edcleryton Gabriel**: Autor e responsável pelos testes.
+
+### **Mentores**
+- **Professor Nome do Mentor**: Agradecimentos pela orientação no curso.
+
+---
+
+**Contato:**  
+E-mail: [edcleryton.gabriel@gmail.com](mailto:edcleryton.gabriel@gmail.com)  
+LinkedIn: [Edcleryton Silva](https://www.linkedin.com/in/edcleryton-silva/)  
+GitHub: [Edcleryton](https://github.com/Edcleryton)  
+
+---
+
+**Vamos garantir a qualidade! 🚀**
