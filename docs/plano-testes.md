@@ -80,6 +80,12 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 
 > **Relatório Complementar:** Os resultados dos testes, bugs encontrados e sugestões de melhorias estão documentados no relatório complementar: [Relatório de Resultados](./relatorio-resultados.md).
 
+> **Nota:** As evidências visuais e em vídeo dos testes serão armazenadas externamente para fácil consulta. Acesse através dos links organizados por categoria:
+
+- 🔗 [Evidências de Bugs](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)  
+- 🔗 [Evidências de Testes Funcionais](https://terabox.com/s/11J0NPRZJ7hfTIFhCHSMfJA)  
+- 🔗 [Evidências de Testes Não Funcionais](https://terabox.com/s/16JvzuwtzvLmdz5cCKArzOw)
+
 ---
 
 ## 5. Cronograma
