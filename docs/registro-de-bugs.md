@@ -16,35 +16,19 @@
 | BUG-0004    | Login com falha de layout                         | **Dado:** que o usuário está na página de login.<br>**Quando:** insere credenciais do usuário `problem_user` e clica em "Login".<br>**Então:** os elementos estão desalinhados. | Garantir que os elementos da interface estejam corretamente alinhados.                     | 1          | Windows        | Chrome/Edge       | Moderada        | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | LG-008                        |
 | BUG-0005    | Checkout incompleto - Falta de validação obrigatória | **Dado:** que o usuário acessa o checkout.<br>**Quando:** preenche apenas "Nome", "Sobrenome" e "Código Postal" e tenta finalizar a compra.<br>**Então:** o sistema não solicita informações de pagamento e permite a conclusão do pedido. | Garantir que todos os campos obrigatórios sejam validados antes de finalizar a compra.     | 1          | Windows        | Chrome/Edge       | Crítica         | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | FC-004                        |
 | BUG-0006    | Ausência de opções de pagamento no checkout        | **Dado:** que o usuário acessa a página de checkout.<br>**Quando:** revisa os itens e tenta concluir a compra.<br>**Então:** não há opções ou campos disponíveis para selecionar o método de pagamento. | Implementar opções de pagamento (cartão, boleto, etc.) como parte obrigatória do checkout. | 1          | Windows        | Chrome/Edge       | Crítica         | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | FC-003                        |
+| BUG-0007    | Falha de acessibilidade no checkout                | **Dado:** que o usuário tenta usar o checkout apenas com o teclado.<br>**Quando:** navega usando Tab e Enter.<br>**Então:** não há foco visível nos botões e campos, e ações inesperadas são realizadas. | Garantir que todos os elementos sejam acessíveis via teclado, com foco visível.           | 1          | Windows        | Chrome/Edge       | Moderada        | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | FC-NF-004                      |
+| BUG-0008    | Finalização de compra com carrinho vazio           | **Dado:** que o usuário acessa o checkout sem itens no carrinho.<br>**Quando:** preenche os dados no checkout e tenta finalizar a compra.<br>**Então:** a finalização é feita com sucesso, mesmo sem produtos. | Bloquear o processo de checkout quando o carrinho estiver vazio.                          | 1          | Windows        | Chrome/Edge       | Crítica         | Aberto     | [Ver Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                            | RC-002                        |
 
 ---
 
 ## Resumo Geral
 
-- **Total de Bugs Registrados:** 6
-- **Bugs Críticos/Bloqueadores:** 2
-- **Bugs Moderados:** 2
+- **Total de Bugs Registrados:** 8
+- **Bugs Críticos/Bloqueadores:** 3
+- **Bugs Moderados:** 3
 - **Bugs Leves:** 0
 - **Status Atual dos Bugs:**
-  - **Abertos:** 6
-  - **Fechados:** 0
-
-### Notas Adicionais
-- **Priorização:** Os bugs de maior criticidade devem ser tratados antes do lançamento.
-- **Acompanhamento:** As evidências e casos relacionados estão documentados para facilitar a resolução.
-- **Próximos Passos:** Executar retestes após a correção dos bugs.
-
-
----
-
-## Resumo Geral
-
-- **Total de Bugs Registrados:** 6
-- **Bugs Críticos/Bloqueadores:** 2
-- **Bugs Moderados:** 2
-- **Bugs Leves:** 1
-- **Status Atual dos Bugs:**
-  - **Abertos:** 6
+  - **Abertos:** 8
   - **Fechados:** 0
 
 ### Notas Adicionais
