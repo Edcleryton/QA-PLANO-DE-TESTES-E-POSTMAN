@@ -119,21 +119,18 @@ As evidências dos testes de API estão organizadas na pasta `Evidencias/api-tes
 
 ---
 
-## 📌 Colaboradores e Mentores ✨
+## 📌 Colaborador ✨
 
-### **Colaboradores**
+### **Colaborador**
 - **Edcleryton Gabriel**: Autor e responsável pelos testes.
-
-### **Mentores**
-- **Professor Nome do Mentor**: Agradecimentos pela orientação no curso.
 
 ---
 
-**Contato:**  
+**Contato**  
 E-mail: [edcleryton.gabriel@gmail.com](mailto:edcleryton.gabriel@gmail.com)  
 LinkedIn: [Edcleryton Silva](https://www.linkedin.com/in/edcleryton-silva/)  
 GitHub: [Edcleryton](https://github.com/Edcleryton)  
-
+Whatsapp: +55 (71) 9 9386-5329
 ---
 
 **Vamos garantir a qualidade! 🚀**
