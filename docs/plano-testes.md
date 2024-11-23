@@ -142,7 +142,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 
 ---
 
-#### **7.1.1.2 Testes Não Funcionais**
+##### **7.1.1.2 Testes Não Funcionais**
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
 | LG-NF-001 | Testar login em diferentes navegadores    | 1. Abrir o site no Chrome, Firefox e Edge<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Login funcional em todos os navegadores testados. |
@@ -154,20 +154,25 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 
 #### 7.1.2 Ordenação e filtragem de produtos
 
-##### 7.1.2.1 Testes Funcionais
-| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
-|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| OR-001 | Ordenar produtos por preço crescente     | 1. Acessar a página de produtos<br>2. Selecionar "Preço: menor para maior" | Produtos exibidos em ordem crescente de preço. |
-| OR-002 | Ordenar produtos por preço decrescente    | 1. Acessar a página de produtos<br>2. Selecionar "Preço: maior para menor" | Produtos exibidos em ordem decrescente de preço. |
-| OR-003 | Filtrar produtos por categoria específica | 1. Acessar a página de produtos<br>2. Selecionar uma categoria de filtro (ex.: Eletrônicos) | Apenas produtos da categoria selecionada são exibidos. |
-| OR-004 | Filtrar produtos por múltiplos critérios  | 1. Aplicar mais de um filtro (ex.: categoria e preço)<br>2. Verificar os produtos exibidos | Produtos correspondentes a todos os critérios aplicados são exibidos. |
+##### **7.1.2.1 Testes Funcionais**
 
-##### 7.1.2.2 Testes Não Funcionais
 | ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
 |--------|------------------------------------------|------------------------------------------|-----------------------------------------|
-| OR-NF-001 | Testar ordenação em dispositivos móveis | 1. Acessar o site no modo "móvel" (DevTools)<br>2. Testar ordenação por preço | Ordenação funcional em dispositivos móveis. |
-| OR-NF-002 | Verificar tempo de carregamento após filtros | 1. Aplicar filtros em categorias com muitos produtos<br>2. Medir o tempo para exibição dos resultados | Tempo de carregamento inferior a 2 segundos. |
-| OR-NF-003 | Verificar comportamento com categorias vazias | 1. Aplicar filtro para uma categoria sem produtos<br>2. Conferir mensagem exibida | Mensagem clara informando que não há produtos disponíveis. |
+| OR-001 | Ordenar produtos de A-Z                  | 1. Acessar a página de produtos<br>2. Selecionar "A-Z" no menu de filtros | Produtos exibidos em ordem alfabética crescente. |
+| OR-002 | Ordenar produtos de Z-A                  | 1. Acessar a página de produtos<br>2. Selecionar "Z-A" no menu de filtros | Produtos exibidos em ordem alfabética decrescente. |
+| OR-003 | Ordenar produtos por preço crescente     | 1. Acessar a página de produtos<br>2. Selecionar "Preço: menor para maior" | Produtos exibidos em ordem crescente de preço. |
+| OR-004 | Ordenar produtos por preço decrescente   | 1. Acessar a página de produtos<br>2. Selecionar "Preço: maior para menor" | Produtos exibidos em ordem decrescente de preço. |
+
+---
+
+##### **7.1.2.2 Testes Não Funcionais**
+
+| ID     | Descrição                                  | Passos para Reproduzir                   | Resultado Esperado                      |
+|--------|------------------------------------------|------------------------------------------|-----------------------------------------|
+| OR-NF-001 | Testar ordenação em dispositivos móveis | 1. Acessar o site no modo "móvel" (DevTools)<br>2. Testar ordenação pelos filtros disponíveis | Ordenação funcional em dispositivos móveis. |
+| OR-NF-002 | Verificar tempo de resposta ao aplicar filtros | 1. Selecionar um filtro (ex.: "A-Z") em categorias com muitos produtos<br>2. Medir o tempo para exibição dos resultados | Tempo de carregamento inferior a 2 segundos. |
+| OR-NF-003 | Verificar comportamento com categorias vazias | 1. Aplicar filtro em uma categoria sem produtos<br>2. Conferir mensagem exibida | Mensagem clara informando que não há produtos disponíveis. |
+
 
 ---
 
