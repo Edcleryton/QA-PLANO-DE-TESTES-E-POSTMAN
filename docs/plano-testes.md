@@ -208,8 +208,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 ##### 7.1.4.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
-| RC-NF-001  | Verificar tempo de resposta ao remover produtos | 1. Remover produtos do carrinho repetidamente<br>2. Medir o tempo de resposta após cada ação                   | Tempo de resposta inferior a 1 segundo.       |
-| RC-NF-002  | Verificar acessibilidade na remoção de produtos do carrinho | 1. Navegar pelo carrinho usando apenas o teclado (Tab e Enter).<br>2. Selecionar o botão "Remover" de um produto.    | Produto removido com sucesso, com foco visível no elemento selecionado. |
+| RC-NF-001  | Verificar acessibilidade na remoção de produtos do carrinho | 1. Navegar pelo carrinho usando apenas o teclado (Tab e Enter). |
 
 ---
 
