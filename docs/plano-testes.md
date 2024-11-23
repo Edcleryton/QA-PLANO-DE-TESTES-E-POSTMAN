@@ -111,14 +111,14 @@ Este plano de testes foi desenvolvido para garantir a qualidade das funcionalida
 
 | ID      | Descrição                                     | Passos para Reproduzir                                                              | Resultado Esperado                                    |
 |---------|---------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------|
-| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
-| LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir email válido e senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
+| LG-001  | Login com credenciais válidas               | 1. Acessar a página de login<br>2. Inserir o usuário `standard_user` e a senha `secret_sauce`<br>3. Clicar em "Login" | Usuário logado com sucesso e redirecionado para a página inicial. |
+| LG-002  | Login com credenciais inválidas             | 1. Acessar a página de login<br>2. Inserir o usuário `standard_user` e uma senha inválida<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando falha no login. |
 | LG-003  | Login com campos vazios                     | 1. Acessar a página de login<br>2. Deixar os campos "Username" e "Password" vazios<br>3. Clicar em "Login" | Exibição de mensagem de erro solicitando preenchimento dos campos obrigatórios. |
-| LG-004  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir nome de usuário não cadastrado<br>3. Inserir senha válida<br>4. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
-| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir um nome de usuário válido<br>3. Deixar o campo de senha vazio<br>4. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
-| LG-006  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir credenciais válidas de uma conta bloqueada<br>3. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
-| LG-007  | Login com falha de desempenho               | 1. Acessar a página de login<br>2. Inserir credenciais válidas<br>3. Clicar em "Login"<br>4. Verificar lentidão no carregamento | Exibição de mensagem de sucesso, mas com carregamento acima do tempo esperado. |
-| LG-008  | Login com falhas de layout                  | 1. Acessar a página de login<br>2. Verificar a disposição dos campos e botões<br>3. Inserir credenciais válidas e realizar login | Interface deve estar corretamente alinhada e funcional em todos os dispositivos. |
+| LG-004  | Login com nome de usuário inexistente       | 1. Acessar a página de login<br>2. Inserir um nome de usuário inexistente (`inexistente_user`) e a senha `secret_sauce`<br>3. Clicar em "Login" | Exibição de mensagem de erro informando que o usuário não existe. |
+| LG-005  | Login com senha vazia                       | 1. Acessar a página de login<br>2. Inserir o usuário `standard_user` e deixar o campo de senha vazio<br>3. Clicar em "Login" | Exibição de mensagem de erro indicando que a senha é obrigatória. |
+| LG-006  | Login com conta bloqueada                   | 1. Acessar a página de login<br>2. Inserir o usuário `locked_out_user` e a senha `secret_sauce`<br>3. Clicar em "Login" | Exibição de mensagem informando que o usuário está bloqueado. |
+| LG-007  | Login com falha de desempenho               | 1. Acessar a página de login<br>2. Inserir o usuário `performance_glitch_user` e a senha `secret_sauce`<br>3. Clicar em "Login"<br>4. Verificar lentidão no carregamento | Exibição de mensagem de sucesso, mas com carregamento acima do tempo esperado. |
+| LG-008  | Login com falhas de layout                  | 1. Acessar a página de login<br>2. Verificar a disposição dos campos e botões<br>3. Inserir o usuário `problem_user` e a senha `secret_sauce`<br>4. Clicar em "Login" | Interface deve estar corretamente alinhada e funcional em todos os dispositivos. |
 
 ---
 
