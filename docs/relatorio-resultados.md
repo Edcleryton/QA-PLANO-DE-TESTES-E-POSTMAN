@@ -17,10 +17,10 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 ## 2. Resumo dos Resultados
 
-- **Total de Casos de Teste Executados:** 55  
-  - **Casos Funcionais:** 38  
-  - **Casos Não Funcionais:** 17  
-- **Casos de Teste Aprovados:** 43  
+- **Total de Casos de Teste Executados:** 52  
+  - **Casos Funcionais:** 37  
+  - **Casos Não Funcionais:** 15  
+- **Casos de Teste Aprovados:** 40  
 - **Casos de Teste Reprovados:** 12  
 - **Cobertura de Testes:** 100%  
 - **Evidências dos Testes:**  
