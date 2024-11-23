@@ -185,6 +185,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | FC-003 | Finalizar compra com sucesso                 | 1. Após inserir informações de pagamento válidas<br>2. Clicar em "Finalizar compra"                            | Compra finalizada, página de confirmação exibida. |
 | FC-004 | Não finalizar compra com informações inválidas | 1. Realizar checkout<br>2. Preencher informações inválidas (ex.: número de cartão incorreto)<br>3. Confirmar   | Exibição de mensagem de erro indicando problema nas informações inseridas. |
 | FC-005 | Verificar comportamento com produtos fora de estoque | 1. Adicionar produto ao carrinho<br>2. Realizar checkout<br>3. Produto fica fora de estoque no processo | Mensagem informando indisponibilidade do produto. |
+| **FC-006** | Validar a obrigatoriedade de dados completos no checkout | 1. Acesse o site e adicione produtos ao carrinho.<br>2. Clique no botão "Checkout".<br>3. Preencha apenas "Nome", "Sobrenome" e "Código Postal".<br>4. Clique em "Continuar".<br>5. Tente finalizar a compra. | O sistema deve exibir mensagens de erro para os campos obrigatórios não preenchidos e bloquear a finalização. |
 
 ##### 7.1.3.2 Testes Não Funcionais
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
