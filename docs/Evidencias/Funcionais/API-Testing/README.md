@@ -1,1 +1,0 @@
-# Evidências Funcionais - API Testing
