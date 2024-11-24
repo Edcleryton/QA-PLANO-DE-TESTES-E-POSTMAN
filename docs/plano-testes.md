@@ -227,8 +227,7 @@ Ordenação e filtragem de produtos, Fluxo completo de compra (do carrinho até 
 | ID         | Descrição                                       | Passos para Reproduzir                                                                                           | Resultado Esperado                              |
 |------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
 | NP-NF-001  | Verificar responsividade da navegação          | 1. Testar navegação em diferentes tamanhos de tela<br>2. Clicar em links do menu                               | Navegação funcional e layout responsivo.       |
-| NP-NF-002  | Testar tempo de carregamento ao navegar        | 1. Navegar entre páginas principais<br>2. Medir tempo de carregamento em cada transição                        | Tempo de carregamento inferior a 2 segundos.   |
-|NP-NF-003    | Verificar comportamento do menu principal    | 1. Navegar pelo menu principal.<br>2. Selecionar todas as opções disponíveis. | Todas as opções do menu devem estar funcionando e redirecionar corretamente. |
+| NP-NF-002  | Verificar comportamento do menu principal    | 1. Navegar pelo menu principal.<br>2. Selecionar todas as opções disponíveis. | Todas as opções do menu devem estar funcionando e redirecionar corretamente. |
 
 ---
 
