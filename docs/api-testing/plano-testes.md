@@ -1,4 +1,4 @@
-# Plano de Testes - Restful-Booker (Atualizado)
+# Plano de Testes - Restful-Booker 
 
 ## Índice
 
