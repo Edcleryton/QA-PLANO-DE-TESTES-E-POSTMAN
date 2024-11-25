@@ -17,14 +17,15 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 ## 2. Resumo dos Resultados
 
-- **Total de Casos de Teste Executados:** 52  
-  - **Casos Funcionais:** 37  
+- **Total de Casos de Teste Executados:** 55  
+  - **Casos Funcionais:** 40  
   - **Casos Não Funcionais:** 15  
-- **Casos de Teste Aprovados:** 40  
+- **Casos de Teste Aprovados:** 43  
 - **Casos de Teste Reprovados:** 12  
 - **Cobertura de Testes:** 100%  
 - **Evidências dos Testes:**  
-  - **Funcionais e Não Funcionais:** [Link para Evidências](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)
+  - **Funcionais:** [Link para Evidências](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)  
+  - **Não Funcionais:** [Link para Evidências](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)  
 
 ---
 
@@ -32,15 +33,19 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 
 | **ID**     | **Título**                                  | **Gravidade** | **Evidência**                                                                                       | **Status** |
 |------------|--------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|------------|
-| BUG-0001   | Tempo de resposta no login acima do esperado (3.54s) | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0002   | Mensagem de erro genérica ao falhar login  | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0003   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0004   | Login com falha de layout                 | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0005   | Checkout incompleto - Falta de validação obrigatória | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0006   | Ausência de opções de pagamento no checkout | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0007   | Redirecionamento externo não esperado na página "About" | Moderada      | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0008   | Finalização de compra sem produtos no carrinho | Crítica        | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
-| BUG-0009   | Acessibilidade inadequada na remoção de itens do carrinho | Alta          | [Evidência](https://terabox.com/s/1n6mXASr--7qBy0lObrCBZg)                                          | Aberto     |
+| BUG-0001   | Tempo de resposta no login acima do esperado (3.54s) | Alta          | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0002   | Mensagem de erro genérica ao falhar login  | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0003   | Login não funcional em dispositivos móveis | Alta          | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0004   | Login com falha de layout                 | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0005   | Checkout incompleto - Falta de validação obrigatória | Crítica        | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0006   | Ausência de opções de pagamento no checkout | Crítica        | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0007   | Redirecionamento externo não esperado na página "About" | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0008   | Finalização de compra com carrinho vazio   | Crítica        | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0009   | Acessibilidade inadequada na remoção de itens do carrinho | Alta          | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0010   | Falha na opção "Reset App State"           | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0011   | Logout em múltiplas sessões não sincronizado | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0012   | Falta de funcionalidade para alterar quantidade de itens no carrinho | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0013   | Mensagem de erro ao tentar acessar páginas sem login | Moderada      | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
 
 ---
 
@@ -49,6 +54,7 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 ### **Interface do Usuário (UI):**
 - Melhorar a clareza das mensagens de erro para login inválido.
 - Adicionar feedback visual ao tentar logar (ex.: loading spinner).
+- Ajustar alinhamento dos elementos da página de login.
 
 ### **Performance:**
 - Otimizar o tempo de resposta do endpoint de login para ficar abaixo de 2 segundos.
@@ -57,11 +63,13 @@ Este relatório documenta os resultados dos testes realizados no Sauce Demo e na
 ### **Checkout:**
 - Implementar validação obrigatória para todos os campos de pagamento no checkout.
 - Adicionar opções de pagamento (cartão de crédito, boleto, etc.).
+- Implementar funcionalidade para alterar quantidade de itens diretamente no carrinho.
 
 ### **Acessibilidade:**
 - Garantir que o site seja compatível com leitores de tela e navegadores por teclado.
 - Implementar ajustes para responsividade em dispositivos móveis.
 - Garantir foco visível e claro para campos de entrada e botões em todas as páginas.
+- Melhorar foco e usabilidade ao remover itens do carrinho usando o teclado.
 
 ---
 
