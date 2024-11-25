@@ -35,12 +35,13 @@ Os testes foram planejados com base em critérios de aceitação funcionais e n�
 
 ## 📌 Estrutura do Repositório
 
-A organização do repositório é a seguinte:
+---
 
-- **`README.md`**: Este arquivo, contendo informações gerais do projeto.
-- **`docs/`**:  
-  - **`plano-testes.md`**: Documento com os planos de testes detalhados.  
-  - **`relatorio-resultados.md`**: Documento complementar com os resultados dos testes, bugs encontrados e sugestões de melhorias.
+## 📌 Estrutura do Repositório
+
+A organização do repositório segue uma estrutura clara para facilitar o acesso às informações e documentos necessários:
+
+
 
 ---
 
@@ -61,7 +62,7 @@ Validar os principais fluxos de funcionalidade e usabilidade da aplicação Sauc
 
 #### **Evidências**
 As evidências relacionadas aos testes estão disponíveis no Terabox.  
-- 🔗 [Evidências de Bugs e Testes](https://terabox.com/s/10G4Pl6pXZg24-Cvs2eCMvA)
+- 🔗 [Evidências de Bugs e Testes de UI](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)
 
 ---
 
@@ -81,7 +82,7 @@ Garantir que os principais endpoints da API Restful-Booker estejam funcionando c
 
 #### **Evidências**
 As evidências dos testes de API estão disponíveis no Terabox.  
-- 🔗 [Evidências de API](https://terabox.com/s/1Tt3Bz1a6JdNAH-dLprAJcQ)
+- 🔗 [Evidências de API](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)
 
 ---
 
@@ -89,12 +90,12 @@ As evidências dos testes de API estão disponíveis no Terabox.
 
 ### **UI Testing**
 1. Acesse a aplicação Sauce Demo: [https://www.saucedemo.com](https://www.saucedemo.com).
-2. Consulte o documento `docs/plano-testes.md` para os passos detalhados de cada cenário.
+2. Consulte o documento `docs/ui-testing/plano-testes.md` para os passos detalhados de cada cenário.
 
 ### **API Testing**
-1. Importe a collection do Postman disponível na pasta `docs/`.
+1. Importe a collection do Postman disponível na pasta `collections/`.
 2. Configure as variáveis de ambiente incluídas na collection.
-3. Consulte o documento `docs/plano-testes.md` para os passos detalhados de cada cenário.
+3. Consulte o documento `docs/api-testing/plano-testes.md` para os passos detalhados de cada cenário.
 
 ---
 
@@ -125,6 +126,6 @@ Whatsapp: +55 (71) 9 9386-5329
 
 ---
 
-> **Nota:** Consulte os documentos `docs/plano-testes.md` e `docs/relatorio-resultados.md` para mais detalhes sobre o planejamento e os resultados dos testes.
+> **Nota:** Consulte os documentos `docs/ui-testing/plano-testes.md`, `docs/api-testing/plano-testes.md` e `docs/ui-testing/relatorio-resultados.md` para mais detalhes sobre o planejamento e os resultados dos testes.
 
 **Vamos garantir a qualidade! 🚀**
