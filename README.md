@@ -33,9 +33,6 @@ Os testes foram planejados com base em critérios de aceitação funcionais e n�
 
 ---
 
-## 📌 Estrutura do Repositório
-
----
 
 ## 📌 Estrutura do Repositório
 
