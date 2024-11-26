@@ -11,7 +11,8 @@
 ---
 
 ## 1. Introdução
-Este relatório documenta os resultados dos testes realizados na API Restful-Booker. Ele abrange os bugs encontrados, melhorias sugeridas e análises de riscos, com foco em garantir a qualidade da aplicação.
+
+Este relatório documenta os resultados dos testes realizados na API Restful-Booker. Ele abrange os bugs encontrados, melhorias sugeridas e análises de riscos, com foco em garantir a qualidade da aplicação. Além disso, todas as evidências dos testes são baseadas no código e na collection JSON disponível no repositório.
 
 ---
 
@@ -24,8 +25,7 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 - **Casos de Teste Reprovados:** 4  
 - **Cobertura de Testes:** 100%  
 - **Evidências dos Testes:**  
-  - **Funcionais:** [Evidências Funcionais](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)  
-  - **Não Funcionais:** [Evidências Não Funcionais](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)  
+  - A collection JSON utilizada para os testes está disponível [aqui](https://github.com/Edcleryton/QA-Testing-BeTalent/blob/main/docs/api-testing/API%20Testing%20(Restful-Booker).postman_collection.json).  
 
 ---
 
@@ -33,13 +33,13 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 
 | **ID**     | **Título**                                   | **Gravidade** | **Evidência**                                                                                       | **Status** |
 |------------|---------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|------------|
-| BUG-0001   | Código de status incorreto para autenticação inválida | Moderada      | [Evidência](./evidencias/BUG-0001-autenticacao-invalida.png)                                        | Aberto     |
-| BUG-0002   | Falha ao buscar reserva específica: ID inexistente após criação | Alta          | [Evidência](./evidencias/BUG-0002-id-nao-persistente.png)                                           | Aberto     |
-| BUG-0003   | Detalhes da reserva ausentes na resposta          | Alta          | [Evidência](./evidencias/BUG-0003-detalhes-ausentes.png)                                            | Aberto     |
-| BUG-0004   | Tipo de conteúdo incorreto na resposta            | Moderada      | [Evidência](./evidencias/BUG-0004-content-type-incorreto.png)                                       | Aberto     |
-| BUG-0005   | Dados da reserva inválidos ou ausentes na resposta | Moderada      | [Evidência](./evidencias/BUG-0005-dados-invalidos.png)                                              | Aberto     |
-| BUG-0006   | Resposta vazia ao buscar reservas com múltiplos filtros | Alta          | [Evidência](./evidencias/BUG-0006-multiplos-filtros.png)                                            | Aberto     |
-| BUG-0007   | Resposta vazia ao buscar reservas por `firstname`  | Alta          | [Evidência](./evidencias/BUG-0007-firstname-vazio.png)                                              | Aberto     |
+| BUG-0001   | Código de status incorreto para autenticação inválida | Moderada      | [Registro de Bugs - BUG-0001](./registro-de-bugs.md#bug-0001)                                        | Aberto     |
+| BUG-0002   | Falha ao buscar reserva específica: ID inexistente após criação | Alta          | [Registro de Bugs - BUG-0002](./registro-de-bugs.md#bug-0002)                                       | Aberto     |
+| BUG-0003   | Detalhes da reserva ausentes na resposta          | Alta          | [Registro de Bugs - BUG-0003](./registro-de-bugs.md#bug-0003)                                       | Aberto     |
+| BUG-0004   | Tipo de conteúdo incorreto na resposta            | Moderada      | [Registro de Bugs - BUG-0004](./registro-de-bugs.md#bug-0004)                                       | Aberto     |
+| BUG-0005   | Dados da reserva inválidos ou ausentes na resposta | Moderada      | [Registro de Bugs - BUG-0005](./registro-de-bugs.md#bug-0005)                                       | Aberto     |
+| BUG-0006   | Resposta vazia ao buscar reservas com múltiplos filtros | Alta          | [Registro de Bugs - BUG-0006](./registro-de-bugs.md#bug-0006)                                       | Aberto     |
+| BUG-0007   | Resposta vazia ao buscar reservas por `firstname`  | Alta          | [Registro de Bugs - BUG-0007](./registro-de-bugs.md#bug-0007)                                       | Aberto     |
 
 ---
 
@@ -56,6 +56,9 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 ### **Filtros e Buscas:**
 - Corrigir os filtros para que retornem reservas correspondentes aos critérios aplicados.
 - Implementar validações para evitar respostas vazias quando há dados disponíveis.
+
+### **Observação Importante:**
+- É necessário gerar um novo token de autenticação a cada 15 minutos para realizar os testes dos endpoints GR-004 e GR-005.
 
 ---
 
@@ -82,4 +85,4 @@ Os testes realizados identificaram diversos bugs de alta severidade relacionados
 ---
 
 > **Nota:** Consulte o [Registro de Bugs](./registro-de-bugs.md) para mais detalhes sobre os bugs identificados.  
-> **Nota:** Consulte o [Plano de Testes](./plano-de-testes.md) para informações detalhadas sobre os casos de teste.
+> **Nota:** Consulte o [Plano de Testes](./plano-testes.md) para informações detalhadas sobre os casos de teste.
