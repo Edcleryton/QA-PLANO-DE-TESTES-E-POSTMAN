@@ -1,4 +1,4 @@
-# Plano de Testes - Restful-Booker 
+# Plano de Testes - Restful-Booker
 
 ## Índice
 
@@ -14,6 +14,8 @@
      - 6.2.1 [Testes Funcionais](#621-testes-funcionais)
    - 6.3 [Filtros e Buscas](#63-filtros-e-buscas)
      - 6.3.1 [Testes Funcionais](#631-testes-funcionais)
+7. [Observações](#observações)
+8. [Links Relacionados](#links-relacionados)
 
 ---
 
@@ -37,6 +39,7 @@ Este plano de testes foi desenvolvido para garantir a qualidade da API Restful-B
 - **API Testing:**
   - Postman
   - Variáveis de ambiente configuradas para URL e parâmetros dinâmicos
+  - Collection JSON do Postman disponível [aqui](https://github.com/Edcleryton/QA-Testing-BeTalent/blob/main/docs/api-testing/API%20Testing%20(Restful-Booker).postman_collection.json)
 
 ---
 
@@ -95,5 +98,20 @@ Este plano de testes foi desenvolvido para garantir a qualidade da API Restful-B
 | FB-002   | Buscar reservas por data de check-in | 1. Realizar uma requisição **GET** no endpoint `/booking?checkin={data}`.<br>2. Informar uma data válida no parâmetro `checkin` no formato `YYYY-MM-DD`.               | Retornar código de status **200** com as reservas correspondentes à data de check-in informada.              |
 | FB-003   | Buscar reservas por data de check-out | 1. Realizar uma requisição **GET** no endpoint `/booking?checkout={data}`.<br>2. Informar uma data válida no parâmetro `checkout` no formato `YYYY-MM-DD`.             | Retornar código de status **200** com as reservas correspondentes à data de check-out informada.             |
 | FB-004   | Buscar reservas com múltiplos filtros | 1. Realizar uma requisição **GET** no endpoint `/booking` com múltiplos parâmetros (ex.: `firstname`, `checkin`, `checkout`).                                          | Retornar código de status **200** com as reservas que atendem a todos os filtros aplicados.                  |
+
+---
+
+## 7. Observações
+
+- **Token Expirado:** É necessário gerar um novo token de autenticação a cada 15 minutos para realizar os testes dos endpoints GR-004 e GR-005.
+- **Bug nos Filtros:** Os testes FB-001 e FB-004 retornam código 200 com uma resposta vazia, mesmo quando todos os filtros foram aplicados corretamente. Mais detalhes no [Registro de Bugs](./registro-de-bugs.md).
+
+---
+
+## 8. Links Relacionados
+
+- **Registro de Bugs:** [registro-de-bugs.md](./registro-de-bugs.md)
+- **Relatório de Resultados:** [relatorio-resultados.md](./relatorio-resultados.md)
+- **Collection JSON:** [API Testing Collection](./API%20Testing%20(Restful-Booker).postman_collection.json)
 
 ---
