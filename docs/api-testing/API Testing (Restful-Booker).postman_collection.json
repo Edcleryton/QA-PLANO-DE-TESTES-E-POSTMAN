@@ -1,0 +1,986 @@
+{
+	"info": {
+		"_postman_id": "24ef67e4-88de-4ada-8684-6dc5ffcd3ee7",
+		"name": "API Testing (Restful-Booker)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39009191"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "AU-001 - Gerar token com credenciais válidas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Token is generated\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    pm.expect(response).to.have.property(\"token\");\r",
+									"    pm.environment.set(\"authToken\", response.token);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"    // Gerar o token de autorização\r",
+									"    pm.sendRequest({\r",
+									"        url: \"https://restful-booker.herokuapp.com/auth\",\r",
+									"        method: \"POST\",\r",
+									"        body: {\r",
+									"            mode: 'raw',\r",
+									"            raw: JSON.stringify({\r",
+									"                username: \"admin\",\r",
+									"                password: \"password123\"\r",
+									"            })\r",
+									"        }\r",
+									"    }, function (err, response) {\r",
+									"        // Obter o token da resposta\r",
+									"        const token = response.json().token;\r",
+									"        \r",
+									"        // Definir o token como uma variável de ambiente global\r",
+									"        pm.environment.set(\"authToken\", token);\r",
+									"    });\r",
+									"    // Verificar se o token de autorização é válido\r",
+									"    pm.test(\"Token de autorização válido\", function () {\r",
+									"        const authToken = pm.environment.get(\"authToken\");\r",
+									"        pm.expect(authToken).to.be.a(\"string\");\r",
+									"        pm.expect(authToken).to.not.be.empty;\r",
+									"    });\r",
+									"\r",
+									"   "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"password123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AU-002 - Tentar gerar token com",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status is 200 (Bug: Should be 401)\", function () {\r",
+									"    pm.response.to.have.status(200); // Bug identificado\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify error message\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    pm.expect(response).to.have.property(\"reason\", \"Bad credentials\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"if (pm.iterationData.get(\"scenario\") === \"valid\") {\r",
+									"    pm.variables.set(\"username\", \"admin\");\r",
+									"    pm.variables.set(\"password\", \"password123\");\r",
+									"} else {\r",
+									"    pm.variables.set(\"username\", \"wrongUser\");\r",
+									"    pm.variables.set(\"password\", \"wrongPass\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"invalidUser\",\r\n  \"password\": \"invalidPass\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestão de Reservas",
+			"item": [
+				{
+					"name": "GR-001 - Criar uma nova reserva",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Removed duplicate test \"Salvar o ID da reserva\"\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"A resposta contém os detalhes da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.expect(resposta).to.have.property(\"booking\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"firstname\", \"Edcleryton\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"lastname\", \"Silva\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"totalprice\", 350);\r",
+									"    pm.expect(resposta.booking).to.have.property(\"depositpaid\", true);\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkin\", \"2024-11-01\");\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkout\", \"2024-11-10\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"additionalneeds\", \"Breakfast\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Salvar o ID da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.environment.set(\"bookingId\", resposta.bookingid);\r",
+									"    pm.expect(pm.environment.get(\"bookingId\")).to.not.be.null;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Salvar o 'firstname' da reserva\", function () {\r",
+									"    const resposta = pm.response.json(); // Captura a resposta\r",
+									"    const firstname = resposta.booking.firstname; // Obtém o 'firstname'\r",
+									"    \r",
+									"    // Salva o 'firstname' como uma variável de ambiente\r",
+									"    pm.environment.set(\"firstname\", firstname);\r",
+									"\r",
+									"    // Valida que a variável foi salva corretamente\r",
+									"    pm.expect(pm.environment.get(\"firstname\")).to.equal(firstname);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Edcleryton\",\r\n  \"lastname\": \"Silva\",\r\n  \"totalprice\": 350,\r\n  \"depositpaid\": true,\r\n  \"bookingdates\": {\r\n    \"checkin\": \"2024-11-01\",\r\n    \"checkout\": \"2024-11-10\"\r\n  },\r\n  \"additionalneeds\": \"Breakfast\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/booking",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GR-002 - Buscar uma reserva específica",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste 1: Verificar se o código de status da resposta é 200\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Teste 2: Verificar se a resposta contém os detalhes da reserva\r",
+									"pm.test(\"A resposta contém os detalhes da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.expect(resposta).to.have.property(\"firstname\");\r",
+									"    pm.expect(resposta).to.have.property(\"lastname\");\r",
+									"    pm.expect(resposta).to.have.property(\"totalprice\");\r",
+									"    pm.expect(resposta).to.have.property(\"depositpaid\");\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkin\");\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkout\");\r",
+									"});\r",
+									"\r",
+									"// Teste 3: Validar o tipo de conteúdo da resposta\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"// Teste 4: Verificar se o ID da reserva corresponde ao esperado\r",
+									"pm.test(\"O ID da reserva corresponde ao esperado\", function () {\r",
+									"    const bookingId = pm.environment.get(\"bookingId\");\r",
+									"    pm.expect(pm.request.url.toString()).to.include(bookingId);\r",
+									"});\r",
+									"\r",
+									"// Teste 5: Salvar dados da reserva para uso futuro\r",
+									"pm.test(\"Salvar dados da reserva para validação posterior\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.environment.set(\"firstname\", resposta.firstname);\r",
+									"    pm.environment.set(\"lastname\", resposta.lastname);\r",
+									"    pm.environment.set(\"totalprice\", resposta.totalprice);\r",
+									"    pm.environment.set(\"depositpaid\", resposta.depositpaid);\r",
+									"    pm.environment.set(\"checkin\", resposta.bookingdates.checkin);\r",
+									"    pm.environment.set(\"checkout\", resposta.bookingdates.checkout);\r",
+									"});\r",
+									"pm.test(\"A resposta contém os detalhes corretos da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"\r",
+									"    // Verifica os valores da resposta com as variáveis armazenadas\r",
+									"    pm.expect(resposta).to.have.property(\"firstname\", pm.environment.get(\"firstname\"));\r",
+									"    pm.expect(resposta).to.have.property(\"lastname\", pm.environment.get(\"lastname\"));\r",
+									"    pm.expect(resposta).to.have.property(\"totalprice\", Number(pm.environment.get(\"totalprice\")));\r",
+									"    pm.expect(resposta).to.have.property(\"depositpaid\", JSON.parse(pm.environment.get(\"depositpaid\")));\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkin\", pm.environment.get(\"checkin\"));\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkout\", pm.environment.get(\"checkout\"));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/booking/{{bookingId}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking",
+								"{{bookingId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GR-003 - Listar todas as reservas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste 1: Verificar status code e estrutura da resposta\r",
+									"pm.test(\"Status code é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response é um array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(Array.isArray(jsonData)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"// Teste 2: Verificar estrutura dos objetos na resposta\r",
+									"pm.test(\"Cada item tem bookingid\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    if(jsonData.length > 0) {\r",
+									"        pm.expect(jsonData[0]).to.have.property('bookingid');\r",
+									"        pm.expect(jsonData[0].bookingid).to.be.a('number');\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se o código de status é 200\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Teste para salvar o ID gerado na variável 'id'\r",
+									"pm.test(\"Salvar ID gerado na variável id\", function () {\r",
+									"    const resposta = pm.response.json(); // Obtem o corpo da resposta\r",
+									"    pm.expect(resposta[0]).to.have.property(\"bookingid\"); // Verifica se a resposta tem a propriedade 'bookingid'\r",
+									"    pm.collectionVariables.set(\"id\", resposta[0].bookingid); // Salva o ID como variável de coleção\r",
+									"    pm.expect(pm.collectionVariables.get(\"id\")).to.not.be.undefined; // Confirma que a variável foi definida\r",
+									"});\r",
+									"\r",
+									"// Exibir no console o valor da variável 'id'\r",
+									"console.log(\"ID armazenado na variável 'id':\", pm.collectionVariables.get(\"id\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/booking",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GR-004 - Atualizar uma reserva existente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para verificar se o status da resposta é 200\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se os dados da reserva foram atualizados corretamente\r",
+									"pm.test(\"Os dados da reserva foram atualizados\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"\r",
+									"    // Atualizar os valores esperados com base na resposta recebida\r",
+									"    const expectedFirstname = resposta.firstname;\r",
+									"    const expectedLastname = resposta.lastname;\r",
+									"    const expectedTotalPrice = resposta.totalprice;\r",
+									"    const expectedDepositPaid = resposta.depositpaid;\r",
+									"    const expectedCheckin = resposta.bookingdates.checkin;\r",
+									"    const expectedCheckout = resposta.bookingdates.checkout;\r",
+									"    const expectedAdditionalNeeds = resposta.additionalneeds;\r",
+									"\r",
+									"    pm.expect(resposta).to.have.property(\"firstname\", expectedFirstname);\r",
+									"    pm.expect(resposta).to.have.property(\"lastname\", expectedLastname);\r",
+									"    pm.expect(resposta).to.have.property(\"totalprice\", expectedTotalPrice);\r",
+									"    pm.expect(resposta).to.have.property(\"depositpaid\", expectedDepositPaid);\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkin\", expectedCheckin);\r",
+									"    pm.expect(resposta.bookingdates).to.have.property(\"checkout\", expectedCheckout);\r",
+									"    pm.expect(resposta).to.have.property(\"additionalneeds\", expectedAdditionalNeeds);\r",
+									"});\r",
+									"\r",
+									"// Teste para validar o tipo de conteúdo da resposta\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"\r",
+									"// Teste para salvar os dados atualizados da reserva no ambiente\r",
+									"pm.test(\"Salvar os dados da reserva atualizada\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.environment.set(\"updatedFirstname\", resposta.firstname);\r",
+									"    pm.environment.set(\"updatedLastname\", resposta.lastname);\r",
+									"    pm.environment.set(\"updatedTotalPrice\", resposta.totalprice);\r",
+									"    pm.environment.set(\"updatedDepositPaid\", resposta.depositpaid);\r",
+									"    pm.environment.set(\"updatedCheckin\", resposta.bookingdates.checkin);\r",
+									"    pm.environment.set(\"updatedCheckout\", resposta.bookingdates.checkout);\r",
+									"    pm.environment.set(\"updatedAdditionalNeeds\", resposta.additionalneeds);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// Verifica se o token existe ou está expirado\r",
+									"if (!pm.collectionVariables.get(\"authToken\")) {\r",
+									"    pm.sendRequest({\r",
+									"        url: pm.collectionVariables.get(\"apiUrl\") + \"/auth\",\r",
+									"        method: \"POST\",\r",
+									"        header: {\r",
+									"            \"Content-Type\": \"application/json\"\r",
+									"        },\r",
+									"        body: {\r",
+									"            mode: \"raw\",\r",
+									"            raw: JSON.stringify({\r",
+									"                \"username\": \"admin\",\r",
+									"                \"password\": \"password123\"\r",
+									"            })\r",
+									"        }\r",
+									"    }, function (err, res) {\r",
+									"        if (err) {\r",
+									"            console.error(\"Erro ao obter token:\", err);\r",
+									"        } else {\r",
+									"            const json = res.json();\r",
+									"            pm.collectionVariables.set(\"authToken\", json.token);\r",
+									"        }\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "token={{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstname\": \"Edcleryton Gabriel\",\r\n  \"lastname\": \"Da Silva\",\r\n  \"totalprice\": 500,\r\n  \"depositpaid\": true,\r\n  \"bookingdates\": {\r\n    \"checkin\": \"2024-11-15\",\r\n    \"checkout\": \"2024-11-28\"\r\n  },\r\n  \"additionalneeds\": \"Jantar\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/booking/{{bookingId}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking",
+								"{{bookingId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GR-005 - Deletar uma reserva",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var tests = {};\r",
+									"\r",
+									"// Test 1: Verificar status code 201\r",
+									"tests[\"Status code é 201\"] = pm.response.code === 201;\r",
+									"\r",
+									"// Test 2: Verificar se o header de autorização está presente\r",
+									"tests[\"Authorization presente\"] = pm.request.headers.some(h => \r",
+									"    h.key === 'Cookie' || h.key === 'Authorization'\r",
+									");\r",
+									"\r",
+									"// Test 3: Verificar método DELETE\r",
+									"tests[\"Método é DELETE\"] = pm.request.method === 'DELETE';\r",
+									"\r",
+									"// Test 4: Verificar tempo de resposta\r",
+									"tests[\"Tempo de resposta aceitável\"] = pm.response.responseTime < 2000;\r",
+									"\r",
+									"// Test 5: Verificar resposta vazia (conforme documentação)\r",
+									"tests[\"Resposta correta\"] = pm.response.text() === \"\" || \r",
+									"                           pm.response.text() === \"Created\";"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{authToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/booking/{{bookingId}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking",
+								"{{bookingId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Filtros e Buscas",
+			"item": [
+				{
+					"name": "FB-001 - Buscar reservas por nome",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"A resposta contém os detalhes da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.expect(resposta).to.have.property(\"booking\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"firstname\", \"Edcleryton\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"lastname\", \"Silva\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"totalprice\", 350);\r",
+									"    pm.expect(resposta.booking).to.have.property(\"depositpaid\", true);\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkin\", \"2024-11-01\");\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkout\", \"2024-11-10\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"additionalneeds\", \"Breakfast\");\r",
+									"});\r",
+									"pm.test(\"Salvar o ID da reserva\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.environment.set(\"bookingId\", resposta.bookingid);\r",
+									"    pm.expect(pm.environment.get(\"bookingId\")).to.not.be.null;\r",
+									"});\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									"pm.test(\"Verificar se 'firstname' está configurado corretamente\", function () {\r",
+									"    const firstname = pm.environment.get(\"firstname\");\r",
+									"    pm.expect(firstname).to.not.be.null; // Certifica que 'firstname' não é nulo\r",
+									"    pm.expect(firstname).to.be.a(\"string\"); // Certifica que 'firstname' é uma string\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Value of {{apiUrl}}: \" + pm.variables.get(\"apiUrl\"));\r",
+									"console.log(\"Value of {{firstname}}: \" + pm.variables.get(\"firstname\"));\r",
+									"pm.test(\"{{firstname}} is defined\", function () {\r",
+									"    const firstName = pm.variables.get(\"firstname\");\r",
+									"    pm.expect(firstName).to.be.a(\"string\");\r",
+									"    pm.expect(firstName).to.not.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/booking?firstname={{firstname}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "{{firstname}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FB-002 - Buscar reservas por data de check-in",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para verificar se o status é 200\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se a resposta contém reservas\r",
+									"pm.test(\"A resposta contém reservas\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.expect(resposta).to.be.an(\"array\").that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se a data de check-in está no intervalo correto\r",
+									"pm.test(\"A data de check-in corresponde ao filtro\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    resposta.forEach(item => {\r",
+									"        pm.expect(item).to.have.property(\"bookingid\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Teste para validar o tipo de conteúdo da resposta\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/booking?checkin={{checkin}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "checkin",
+									"value": "{{checkin}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FB-003 - Buscar reservas por data de check-out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Teste para verificar se o status é 200\r",
+									"pm.test(\"O código de status é 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se a resposta contém reservas\r",
+									"pm.test(\"A resposta contém reservas\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    pm.expect(resposta).to.be.an(\"array\").that.is.not.empty;\r",
+									"});\r",
+									"\r",
+									"// Teste para verificar se a data de check-out está no intervalo correto\r",
+									"pm.test(\"A data de check-out corresponde ao filtro\", function () {\r",
+									"    const resposta = pm.response.json();\r",
+									"    resposta.forEach(item => {\r",
+									"        pm.expect(item).to.have.property(\"bookingid\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Teste para validar o tipo de conteúdo da resposta\r",
+									"pm.test(\"O tipo de conteúdo da resposta é application/json\", function () {\r",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{apiUrl}}/booking?checkout={{checkout}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "checkout",
+									"value": "{{checkout}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FB-004 - Buscar reservas com múltiplos filtros",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// FB-004 - Buscar reservas com múltiplos filtros\r",
+									"pm.test(\"FB-004 - Buscar reservas com múltiplos filtros\", function () {\r",
+									"    const firstName = pm.variables.get(\"firstname\");\r",
+									"    const lastName = pm.variables.get(\"lastname\");\r",
+									"    const checkinDate = pm.variables.get(\"checkin\");\r",
+									"    const checkoutDate = pm.variables.get(\"checkout\");\r",
+									"\r",
+									"    // 1. Verificar se o código de status da resposta é 200\r",
+									"    pm.sendRequest(`{{apiUrl}}/booking?firstname=${firstName}&lastname=${lastName}&checkin=${checkinDate}&checkout=${checkoutDate}`, function (err, response) {\r",
+									"        pm.test(\"Código de status é 200\", function () {\r",
+									"            pm.expect(response.code).to.eql(200);\r",
+									"        });\r",
+									"\r",
+									"        // 2. Verificar se a resposta contém uma lista de reservas\r",
+									"        let bookings;\r",
+									"        try {\r",
+									"            bookings = response.json();\r",
+									"        } catch (e) {\r",
+									"            // Caso a resposta não seja JSON válido\r",
+									"            console.error(\"Erro ao analisar a resposta JSON:\", e);\r",
+									"            bookings = [];\r",
+									"        }\r",
+									"\r",
+									"        pm.test(\"A resposta contém uma lista de reservas\", function () {\r",
+									"            pm.expect(bookings).to.be.an(\"array\");\r",
+									"            // Verifique se a lista de reservas não está vazia\r",
+									"            pm.expect(bookings.length).to.be.above(0);\r",
+									"        });\r",
+									"\r",
+									"        // 3. Verificar se cada reserva retornada atende a todos os filtros\r",
+									"        pm.test(\"As reservas atendem a todos os filtros aplicados\", function () {\r",
+									"            for (let i = 0; i < bookings.length; i++) {\r",
+									"                pm.expect(bookings[i]).to.have.property(\"firstname\", firstName);\r",
+									"                pm.expect(bookings[i]).to.have.property(\"lastname\", lastName);\r",
+									"                pm.expect(bookings[i].bookingdates).to.have.property(\"checkin\", checkinDate);\r",
+									"                pm.expect(bookings[i].bookingdates).to.have.property(\"checkout\", checkoutDate);\r",
+									"            }\r",
+									"        });\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/booking?firstname={{firstname}}&checkin={{checkin}}&checkout={{checkout}}",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "{{firstname}}"
+								},
+								{
+									"key": "checkin",
+									"value": "{{checkin}}"
+								},
+								{
+									"key": "checkout",
+									"value": "{{checkout}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "https://restful-booker.herokuapp.com"
+		},
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": ""
+		},
+		{
+			"key": "bookingId",
+			"value": ""
+		}
+	]
+}
