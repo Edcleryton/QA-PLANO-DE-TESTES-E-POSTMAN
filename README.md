@@ -1,44 +1,3 @@
-# Teste Prático QA 🛠️
-
-Este repositório contém a documentação e as evidências dos testes realizados para o desafio QA Testing BeTalent. Os testes estão divididos em dois tipos principais: **UI Testing** e **API Testing**.
-
----
-
-## 📌 Status do Projeto
-✅ Em andamento
-
----
-
-## 📌 Índice
-1. [Descrição do Projeto](#descrição-do-projeto)  
-2. [Estrutura do Repositório](#estrutura-do-repositório)  
-3. [Testes Realizados](#testes-realizados)  
-   - [UI Testing (Sauce Demo)](#ui-testing-sauce-demo)  
-   - [API Testing (Restful-Booker)](#api-testing-restful-booker)  
-4. [Como Reproduzir os Testes](#como-reproduzir-os-testes)  
-5. [Ferramentas Utilizadas](#ferramentas-utilizadas)  
-6. [Colaborador](#colaborador)  
-
----
-
-## 📌 Descrição do Projeto
-
-O objetivo deste projeto é validar as funcionalidades da aplicação **Sauce Demo** e da API **Restful-Booker**. Ele inclui testes funcionais e não funcionais, priorizando a experiência do usuário, desempenho e acessibilidade.  
-
-Os testes foram planejados com base em critérios de aceitação funcionais e não funcionais, garantindo qualidade nas entregas.
-
-**Objetivos principais:**
-- Validar fluxos de login, navegação e ações principais da interface gráfica (UI Testing).
-- Testar endpoints para autenticação, gestão de reservas e buscas (API Testing).
-
----
-
-
-## 📌 Estrutura do Repositório
-
-A organização do repositório segue uma estrutura clara para facilitar o acesso às informações e documentos necessários:
-
-
 
 ---
 
@@ -78,8 +37,15 @@ Garantir que os principais endpoints da API Restful-Booker estejam funcionando c
    - Buscar reservas por nome, data de check-in e check-out.
 
 #### **Evidências**
-As evidências dos testes de API estão disponíveis no Terabox.  
-- 🔗 [Evidências de API](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)
+Os testes de API podem ser importados diretamente para o Postman usando o arquivo JSON disponível neste repositório.  
+
+- 🔗 **[Download da Collection JSON](./docs/api-testing/api-testing-collection.json)**  
+- 🔗 [Documentação dos Testes de API](./docs/api-testing/plano-testes.md)
+
+**Como Importar para o Postman**:
+1. Faça o download do arquivo `api-testing-collection.json`.
+2. No Postman, clique em **Import** (ícone de seta no canto superior esquerdo).
+3. Selecione o arquivo baixado e importe a coleção.
 
 ---
 
@@ -90,7 +56,7 @@ As evidências dos testes de API estão disponíveis no Terabox.
 2. Consulte o documento `docs/ui-testing/plano-testes.md` para os passos detalhados de cada cenário.
 
 ### **API Testing**
-1. Importe a collection do Postman disponível na pasta `collections/`.
+1. Importe a collection do Postman disponível na pasta `docs/api-testing/`.
 2. Configure as variáveis de ambiente incluídas na collection.
 3. Consulte o documento `docs/api-testing/plano-testes.md` para os passos detalhados de cada cenário.
 
