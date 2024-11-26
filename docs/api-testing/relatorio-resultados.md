@@ -17,11 +17,11 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 
 ## 2. Resumo dos Resultados
 
-- **Total de Casos de Teste Executados:** 9  
-  - **Casos Funcionais:** 6  
-  - **Casos Não Funcionais:** 3  
-- **Casos de Teste Aprovados:** 8  
-- **Casos de Teste Reprovados:** 1  
+- **Total de Casos de Teste Executados:** 11  
+  - **Casos Funcionais:** 9  
+  - **Casos Não Funcionais:** 2  
+- **Casos de Teste Aprovados:** 7  
+- **Casos de Teste Reprovados:** 4  
 - **Cobertura de Testes:** 100%  
 - **Evidências dos Testes:**  
   - **Funcionais:** [Evidências Funcionais](https://terabox.com/s/1H1Sfa4v3n23hNK3Buxj6YA)  
@@ -33,7 +33,13 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 
 | **ID**     | **Título**                                   | **Gravidade** | **Evidência**                                                                                       | **Status** |
 |------------|---------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------|------------|
-| BUG-0001   | Código de status incorreto para autenticação inválida | Alta          | [Evidência](https://terabox.com/s/1VPkxVZ8I4vTvC2nnobsJ-g)                                          | Aberto     |
+| BUG-0001   | Código de status incorreto para autenticação inválida | Moderada      | [Evidência](./evidencias/BUG-0001-autenticacao-invalida.png)                                        | Aberto     |
+| BUG-0002   | Falha ao buscar reserva específica: ID inexistente após criação | Alta          | [Evidência](./evidencias/BUG-0002-id-nao-persistente.png)                                           | Aberto     |
+| BUG-0003   | Detalhes da reserva ausentes na resposta          | Alta          | [Evidência](./evidencias/BUG-0003-detalhes-ausentes.png)                                            | Aberto     |
+| BUG-0004   | Tipo de conteúdo incorreto na resposta            | Moderada      | [Evidência](./evidencias/BUG-0004-content-type-incorreto.png)                                       | Aberto     |
+| BUG-0005   | Dados da reserva inválidos ou ausentes na resposta | Moderada      | [Evidência](./evidencias/BUG-0005-dados-invalidos.png)                                              | Aberto     |
+| BUG-0006   | Resposta vazia ao buscar reservas com múltiplos filtros | Alta          | [Evidência](./evidencias/BUG-0006-multiplos-filtros.png)                                            | Aberto     |
+| BUG-0007   | Resposta vazia ao buscar reservas por `firstname`  | Alta          | [Evidência](./evidencias/BUG-0007-firstname-vazio.png)                                              | Aberto     |
 
 ---
 
@@ -43,8 +49,13 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 - Ajustar o código de status para autenticação inválida de **200 OK** para **401 Unauthorized**.
 - Melhorar a mensagem de erro para ser mais informativa e clara.
 
-### **Performance:**
-- Garantir que o tempo de resposta para geração de token esteja abaixo de 2 segundos.
+### **Gestão de Reservas:**
+- Garantir a persistência dos IDs das reservas após a criação.
+- Garantir que os detalhes das reservas sejam retornados de forma consistente.
+
+### **Filtros e Buscas:**
+- Corrigir os filtros para que retornem reservas correspondentes aos critérios aplicados.
+- Implementar validações para evitar respostas vazias quando há dados disponíveis.
 
 ---
 
@@ -53,21 +64,22 @@ Este relatório documenta os resultados dos testes realizados na API Restful-Boo
 | **Risco**                                                | **Probabilidade** | **Impacto**      | **Mitigação**                            |
 |----------------------------------------------------------|-------------------|------------------|------------------------------------------|
 | Respostas de status inconsistentes em autenticação       | Alta              | Alta             | Ajustar as respostas de código de status nos endpoints de autenticação. |
+| Falha de persistência de dados                           | Alta              | Alta             | Revisar a lógica de persistência das reservas após criação. |
+| Respostas vazias em filtros e buscas                     | Alta              | Alta             | Implementar validações e ajustes nos filtros de busca. |
 
 ---
 
 ## 6. Conclusão e Próximos Passos
 
 ### **Conclusão**
-Os testes realizados identificaram um bug crítico relacionado à autenticação inválida. Este problema impacta diretamente a experiência do usuário e a consistência do sistema.
+Os testes realizados identificaram diversos bugs de alta severidade relacionados à persistência, filtros e consistência nos dados retornados pela API. Esses problemas impactam diretamente a experiência do usuário e a confiabilidade do sistema.
 
 ### **Próximos Passos**
-1. **Correção do Bug Identificado:** Resolver o problema de código de status no endpoint de autenticação.  
-2. **Execução de Retestes:** Garantir que as correções aplicadas resolvam o problema sem introduzir novos erros.  
-3. **Validação Final:** Revalidar todos os cenários de autenticação antes de prosseguir para os testes de reservas e filtros.  
+1. **Correção dos Bugs Identificados:** Resolver os problemas de persistência, filtros e consistência nos dados.  
+2. **Execução de Retestes:** Garantir que as correções aplicadas resolvam os problemas sem introduzir novos erros.  
+3. **Validação Final:** Revalidar todos os cenários de autenticação, reservas e filtros antes de concluir os testes.  
 
 ---
 
-> **Nota:** Consulte o [Registro de Bugs](./registro-de-bugs.md) para mais detalhes sobre o bug identificado.  
+> **Nota:** Consulte o [Registro de Bugs](./registro-de-bugs.md) para mais detalhes sobre os bugs identificados.  
 > **Nota:** Consulte o [Plano de Testes](./plano-de-testes.md) para informações detalhadas sobre os casos de teste.
-
