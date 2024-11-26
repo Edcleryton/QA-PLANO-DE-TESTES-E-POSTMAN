@@ -678,12 +678,12 @@
 									"pm.test(\"A resposta contém os detalhes da reserva\", function () {\r",
 									"    const resposta = pm.response.json();\r",
 									"    pm.expect(resposta).to.have.property(\"booking\");\r",
-									"    pm.expect(resposta.booking).to.have.property(\"firstname\", \"Edcleryton\");\r",
-									"    pm.expect(resposta.booking).to.have.property(\"lastname\", \"Silva\");\r",
-									"    pm.expect(resposta.booking).to.have.property(\"totalprice\", 350);\r",
+									"    pm.expect(resposta.booking).to.have.property(\"firstname\", \"Jim\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"lastname\", \"Brown\");\r",
+									"    pm.expect(resposta.booking).to.have.property(\"totalprice\", 111);\r",
 									"    pm.expect(resposta.booking).to.have.property(\"depositpaid\", true);\r",
-									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkin\", \"2024-11-01\");\r",
-									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkout\", \"2024-11-10\");\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkin\", \"2018-01-01\");\r",
+									"    pm.expect(resposta.booking.bookingdates).to.have.property(\"checkout\", \"2019-01-01\");\r",
 									"    pm.expect(resposta.booking).to.have.property(\"additionalneeds\", \"Breakfast\");\r",
 									"});\r",
 									"pm.test(\"Salvar o ID da reserva\", function () {\r",
@@ -724,6 +724,9 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -733,6 +736,15 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{apiUrl}}/booking?firstname={{firstname}}",
 							"host": [
@@ -931,13 +943,30 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"Value of {{apiUrl}}: \" + pm.variables.get(\"apiUrl\"));\r",
+									"console.log(\"Value of {{firstname}}: \" + pm.variables.get(\"firstname\"));\r",
+									"pm.test(\"{{firstname}} is defined\", function () {\r",
+									"    const firstName = pm.variables.get(\"firstname\");\r",
+									"    pm.expect(firstName).to.be.a(\"string\");\r",
+									"    pm.expect(firstName).to.not.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{apiUrl}}/booking?firstname={{firstname}}&checkin={{checkin}}&checkout={{checkout}}",
+							"raw": "{{apiUrl}}/booking?firstname={{firstname}}&lastname={{lastname}}&checkin={{checkin}}&checkout={{checkout}}",
 							"host": [
 								"{{apiUrl}}"
 							],
@@ -948,6 +977,10 @@
 								{
 									"key": "firstname",
 									"value": "{{firstname}}"
+								},
+								{
+									"key": "lastname",
+									"value": "{{lastname}}"
 								},
 								{
 									"key": "checkin",
@@ -984,4 +1017,3 @@
 		}
 	]
 }
-
